@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>MAIN-CODI</title>
     <style>
-
+    body {
+      font-family : myriad;
+    }
     #container{
       width: 100%;
       height: auto;
@@ -20,12 +22,11 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     #box1, #box2, #box3, #box4{
+      width: cover;
       padding:200px 30px 200px 30px;
-      background-image: url(back.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-
     }
     #box1{
       background-image: url("1.jpg");
@@ -40,11 +41,9 @@
       background-image: url("4.jpg");
     }
     #img1{
-      width:30px;
-      opacity:80%;
+      padding:55px 0 0 0;
     }
     #mypage{
-      background-image: url("100.jpg") 30px;
       font-size: 15px;
       align-content:right;
     }
@@ -72,7 +71,7 @@
     }
     h1{
       font-size: 48px;
-      margin:10px 0px;
+      margin:0px;
       display:grid;
       grid-template-columns: 2fr 1fr;
     }
@@ -130,23 +129,25 @@
         font-size:12px;
       }
       #mypage{
-        font-size: 10px;
+        font-size: 30%;
       }
       .main1{
-        font:200% bold;
+        font-size:200%;
         padding:0px;
       }
       .main2{
-        font:100%;
+        font-size:50%;
       }
       .main1, .main2 {
-        background-position: center;
         width:30%;
         margin: 0px 0px -5px 0px;
       }
       h1{
         font-size:36px;
         margin:10px 0px 0px;
+      }
+      #img1{
+        padding:40px 0 0 0;
       }
 
     </style>
@@ -155,7 +156,7 @@
   	<h1>
       <a href="main.html">Hipcloset</a>
       <div id="mypage">
-        <img id="img1" src="100.jpg">
+        <img id="img1">
           <a  href="1.html">MY PAGE</a>
       </div>
     </h1>
@@ -173,7 +174,7 @@
   </body>
   <footer>
     <p>
-      Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
+      Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
     </p>
   </footer>
 </html>
