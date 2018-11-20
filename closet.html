@@ -31,26 +31,45 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
     </script>
+    <style media="screen">
+    #mypage{
+      font-size: 15px;
+      text-align: right;
+      padding: 40px 10px 0 0;
+    }
+    #top{
+      font-size: 48px;
+      text-decoration: none;
+      margin:0px;
+      display:grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    @media(max-width:480px){
+      #mypage{
+        font-size: 30%;
+      }
+      #top{
+        font-size:36px;
+        margin:10px 0px 0px;
+      }
+
+    </style>
   </head>
   <body>
-    <h1>
+    <h1 id="top">
       <a href="main.html">Hipcloset</a>
       <div id="mypage">
-        <img id="img1">
-          <a  href="mypage.html">MY PAGE</a>
+        <a  href="mypage.html">MY PAGE</a>
       </div>
     </h1>
     <div class="container-fluid">
-    <p>Use <kbd>crtl+p</kbd> to open the Prind dialog box.</p>
-
-
+      <p>Use <kbd>crtl+p</kbd> to open the Prind dialog box.</p>
       <div class="row">
-        <p>page 설명</p>
-        <pre>현재 페이지 왼쪽에서는
-이미지를 불러오는 화면을 나타내고,
-오른쪽에는 저장된 이미지를 그리드로 불러온다.
+        <p>옷장 - </p>
+        <pre>옷을 입는것, 시작은 내 옷장에서
         </pre>
-        <div class="col-sm-4" style="background-color:lavender;">Take Photo!
+        <div class="col-sm-8" style="background-color:lavender;">Take Photo!
           <div class="container">
             <h2>내 콜렉션</h2>
             <div class="page-header">
@@ -60,45 +79,32 @@
                 메세지를 닫을 수 있습니다.
               </div>
             </div>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nM0xDI5R50E" width="300" height="300">
-            </div>
           </div>
-        </div>
-      <div>
-        <div class="col-sm-8" style="background-color:lavenderblush;">저장된 사진
-          <br>
-            <div class="col-sm-6" style="background-color:lavender;">
-              .col-sm-6
-              <img class="img-responsive" src="1.jpg" alt="photo" width="300">
-              <img class="img-responsive" src="2.jpg" alt="photo" width="300">
-              <img class="img-responsive" src="3.jpg" alt="photo" width="300">
-              <img class="img-responsive" src="1.jpg" alt="photo" width="300">
-              <img class="img-responsive" src="2.jpg" alt="photo" width="300">
-              <img class="img-responsive" src="3.jpg" alt="photo" width="300">
-            </div>
-            <div class="col-sm-6" style="background-color:lavender;">.col-sm-6
-              <div class="img-responsive">
-                  <img src="4.jpg" alt="suit" style="width:100%">
-                  <img src="4.jpg" alt="suit" style="width:100%">
-                  <img src="4.jpg" alt="suit" style="width:100%">
-                  <img src="4.jpg" alt="suit" style="width:100%">
-                  <img src="4.jpg" alt="suit" style="width:100%">
-                  <img src="4.jpg" alt="suit" style="width:100%">
+
+          <div class="col-sm-4" style="background-color:lavenderblush;">저장된 사진
+            <br>
+              <div class="col-sm-6" style="background-color:lavender;">
+                <br>
+                <img class="img-responsive" src="1.jpg" alt="photo" width="300">
+                <img class="img-responsive" src="2.jpg" alt="photo" width="300">
+                <img class="img-responsive" src="3.jpg" alt="photo" width="300">
+                <img class="img-responsive" src="1.jpg" alt="photo" width="300">
+                <img class="img-responsive" src="2.jpg" alt="photo" width="300">
+                <img class="img-responsive" src="3.jpg" alt="photo" width="300">
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="jumbotron">
-        <h1>Take Photo <small>Bring your favorite picture!</small></h1>
-        <p><abbr title="패션 피플">패피</abbr>처럼 내 옷장에서 코디한다!</p>
-
-      <blockquote class="blockquote-reverse">
-        <code>블록인용 - </code> <dt>내 옷들을 사진으로 패피들의 옷과 매칭하기;</dt>
-          <br> <dd>나를 돋보이게 하는 것보다</dd> <dt>나의 가치를 한단계 높여줄 것이다.</dt>
-      <footer>Hipcloset</footer>
-      </blockquote>
+        <div class="jumbotron">
+          <h1>Take Photo <small>Bring your favorite picture!</small></h1>
+          <p><abbr title="패션 피플">패피</abbr>처럼 내 옷장에서 코디한다!</p>
+          <blockquote class="blockquote-reverse">
+            <code>블록인용 - </code> <dt>내 옷들을 사진으로 패피들의 옷과 매칭하기;</dt>
+              <br> <dd>나를 돋보이게 하는 것보다</dd> <dt>나의 가치를 한단계 높여줄 것이다.</dt>
+          <footer>Hipcloset</footer>
+          </blockquote>
+        </div>
       </div>
     </div>
   </body>

@@ -74,10 +74,12 @@
     }
     #mypage{
       font-size: 15px;
-      align-content:right;
+      text-align: right;
+      padding: 40px 10px 0 0;
     }
     #top{
       font-size: 48px;
+      text-decoration: none;
       margin:0px;
       display:grid;
       grid-template-columns: 2fr 1fr;
@@ -148,6 +150,13 @@
       }
 
     @media(max-width:480px){
+      #mypage{
+        font-size: 30%;
+      }
+      #top{
+        font-size:36px;
+        margin:10px 0px 0px;
+      }
       #grid{
         display:block;
         grid-template-columns:none;
@@ -156,9 +165,6 @@
         height:auto;
         padding:10px 0px 10px 0px;
         font-size:12px;
-      }
-      #mypage{
-        font-size: 30%;
       }
       .main1{
         font-size:200%;
@@ -171,18 +177,10 @@
         width:30%;
         margin: 0px 0px -5px 0px;
       }
-      #top{
-        font-size:36px;
-        margin:10px 0px 0px;
-      }
-      #img1{
-        padding:40px 0 0 0;
-      }
-
     </style>
   </head>
   <body>
-  	<h1  id="top">
+  	<h1 id="top">
       <a href="main.html">Hipcloset</a>
       <div id="mypage">
         <a  href="mypage.html">MY PAGE</a>

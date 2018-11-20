@@ -34,16 +34,32 @@
     <style media="screen">
     #mypage{
       font-size: 15px;
-      align-content:right;
+      text-align: right;
+      padding: 40px 10px 0 0;
     }
+    #top{
+      font-size: 48px;
+      text-decoration: none;
+      margin:0px;
+      display:grid;
+      grid-template-columns: 2fr 1fr;
+    }
+    @media(max-width:480px){
+      #mypage{
+        font-size: 30%;
+      }
+      #top{
+        font-size:36px;
+        margin:10px 0px 0px;
+      }
+
     </style>
   </head>
   <body>
-    <h1>
+    <h1 id="top">
       <a href="main.html">Hipcloset</a>
       <div id="mypage">
-        <img id="img1">
-          <a  href="mypage.html">MY PAGE</a>
+        <a  href="mypage.html">MY PAGE</a>
       </div>
     </h1>
   <div class="container-fluid">
