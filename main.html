@@ -3,9 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>MAIN-CODI</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" content="width=device-width,  initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    $ npm install bootstrap
+    $(function () {
+        var nua = navigator.userAgent
+        var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+        if (isAndroid) {
+          $('select.form-control').removeClass('form-control').css('width', '100%')
+        }
+      })
+      $font-family-sans-serif:
+        // Safari for OS X and iOS (San Francisco)
+        -apple-system,
+        // Chrome < 56 for OS X (San Francisco)
+        BlinkMacSystemFont,
+        // Windows
+        "Segoe UI",
+        // Android
+        "Roboto",
+        // Basic web fallback
+        "Helvetica Neue", Arial, sans-serif,
+        // Emoji fonts
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+    </script>
+
     <style>
     body {
       font-family : myriad;
@@ -43,12 +72,15 @@
     #box4{
       background-image: url("4.jpg");
     }
-    #img1{
-      padding:55px 0 0 0;
-    }
     #mypage{
       font-size: 15px;
       align-content:right;
+    }
+    #top{
+      font-size: 48px;
+      margin:0px;
+      display:grid;
+      grid-template-columns: 2fr 1fr;
     }
     .main1{
       font:48px bold;
@@ -71,12 +103,6 @@
     }
     div{
       text-align:center;
-    }
-    h1{
-      font-size: 48px;
-      margin:0px;
-      display:grid;
-      grid-template-columns: 2fr 1fr;
     }
     footer{
       font-size:12px;
@@ -145,7 +171,7 @@
         width:30%;
         margin: 0px 0px -5px 0px;
       }
-      h1{
+      #top{
         font-size:36px;
         margin:10px 0px 0px;
       }
@@ -156,23 +182,22 @@
     </style>
   </head>
   <body>
-  	<h1>
+  	<h1  id="top">
       <a href="main.html">Hipcloset</a>
       <div id="mypage">
-        <img id="img1">
-          <a  href="1.html">MY PAGE</a>
+        <a  href="mypage.html">MY PAGE</a>
       </div>
     </h1>
     <br><div id="container"><div><br>
   	<div id="grid">
   		<div id="box1"><a href="photo.html">
         <div class=main1>촬영</div></br><div  class=main2>take photo</div></a></div>
+      <div id="box4"><a href="collection.html">
+        <div class=main1>옷장코디</div></br><div  class=main2>my collection</div></a></div>
   		<div id="box2"><a href="closet.html">
         <div class=main1>옷장</div></br><div  class=main2>my closet</div></a></div>
   		<div id="box3"><a href="bloger.html">
         <div class=main1>블로거코디</div></br><div  class=main2>bloger codi</div></a></div>
-  		<div id="box4"><a href="collection.html">
-        <div class=main1>옷장코디</div></br><div  class=main2>my collection</div></a></div>
   	</div>
   </body>
   <footer>

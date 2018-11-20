@@ -3,15 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title>My Closet</title>
-    <meta name="My Closet" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="My Closet"  content="width=device-width,  initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script type="text/javascript">
+    $ npm install bootstrap
+    $(function () {
+        var nua = navigator.userAgent
+        var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+        if (isAndroid) {
+          $('select.form-control').removeClass('form-control').css('width', '100%')
+        }
+      })
+      $font-family-sans-serif:
+        // Safari for OS X and iOS (San Francisco)
+        -apple-system,
+        // Chrome < 56 for OS X (San Francisco)
+        BlinkMacSystemFont,
+        // Windows
+        "Segoe UI",
+        // Android
+        "Roboto",
+        // Basic web fallback
+        "Helvetica Neue", Arial, sans-serif,
+        // Emoji fonts
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
     </script>
   </head>
   <body>
+    <h1>
+      <a href="main.html">Hipcloset</a>
+      <div id="mypage">
+        <img id="img1">
+          <a  href="mypage.html">MY PAGE</a>
+      </div>
+    </h1>
     <div class="container-fluid">
     <p>Use <kbd>crtl+p</kbd> to open the Prind dialog box.</p>
 
@@ -64,11 +92,10 @@
       </div>
       <div class="jumbotron">
         <h1>Take Photo <small>Bring your favorite picture!</small></h1>
-        <p><abbr title="패션 피플">패피</abbr>처럼 내 옷장도 코디한다!</p>
-        <p>The columns will automatically stack on top of each other when the screen is less than 768px wide.</p>
+        <p><abbr title="패션 피플">패피</abbr>처럼 내 옷장에서 코디한다!</p>
 
       <blockquote class="blockquote-reverse">
-        <code>블록인용 - </code> <dt>사진으로 패피들의 옷과 내 옷들을 매칭하기;</dt>
+        <code>블록인용 - </code> <dt>내 옷들을 사진으로 패피들의 옷과 매칭하기;</dt>
           <br> <dd>나를 돋보이게 하는 것보다</dd> <dt>나의 가치를 한단계 높여줄 것이다.</dt>
       <footer>Hipcloset</footer>
       </blockquote>
