@@ -49,7 +49,6 @@
     }
 
     #grid{
-/*      border:5px solid pink; */
       display:grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
@@ -59,6 +58,18 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+    }
+    #box1 :hover{
+      text-decoration: none;
+    }
+    #box2 :hover{
+      text-decoration: none;
+    }
+    #box3 :hover{
+      text-decoration: none;
+    }
+    #box4 :hover{
+      text-decoration: none;
     }
     #box1{
       background-image: url("1.jpg");
@@ -183,19 +194,19 @@
   	<h1 id="top">
       <a href="main.html">Hipcloset</a>
       <div id="mypage">
-        <a  href="mypage.html">MY PAGE</a>
+        <a class="align-bottom" href="mypage.html">MY PAGE</a>
       </div>
     </h1>
     <br><div id="container"><div><br>
   	<div id="grid">
   		<div id="box1"><a href="photo.html">
         <div class=main1>촬영</div></br><div  class=main2>take photo</div></a></div>
-      <div id="box4"><a href="collection.html">
-        <div class=main1>옷장코디</div></br><div  class=main2>my collection</div></a></div>
   		<div id="box2"><a href="closet.html">
         <div class=main1>옷장</div></br><div  class=main2>my closet</div></a></div>
   		<div id="box3"><a href="bloger.html">
         <div class=main1>블로거코디</div></br><div  class=main2>bloger codi</div></a></div>
+      <div id="box4"><a href="collection.html">
+        <div class=main1>옷장코디</div></br><div  class=main2>my collection</div></a></div>
   	</div>
   </body>
   <footer>
