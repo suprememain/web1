@@ -55,6 +55,33 @@
     div{
       text-align:center;
     }
+
+    .container{
+      padding: 0px;
+      margin: 0px;
+    }
+    .main1{
+      font:64px bold;
+      height: 100px;
+      /* padding: 30px 0px 30px 0px; */
+    }
+    .main2{
+      font:20px bold;
+      padding:10px 0px 10px 0px;
+    }
+    .main1, .main2 {
+      text-align: center;
+      width: cover;
+      background-position: center;
+    }
+
+    .main1, .main2, #bottom{
+      background: rgb(255, 255, 255) transparent;
+      background: rgb(255, 255, 255, 0.6);
+      filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+      -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    }
+
     #backpage{
       background-image: url("back.jpg");
       width: auto;
@@ -62,17 +89,17 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      padding: 0px;
-      margin: 1%;
+      padding: 20px;
+      margin-top: 5px;
     }
-
     #grid{
       display:grid;
       grid-template-columns: 1fr 1fr ;
     }
     #box1, #box2, #box3, #box4{
       width: cover;
-      padding:100px 30px 100px 30px;
+      padding:100px 50px 100px 50px;
+/*    height: 400px;*/
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -104,56 +131,34 @@
     #mypage{
       font-size: 15px;
       text-align: right;
-      padding: 40px 10px 0 0;
+      padding: 20px 10px 20px 0;
     }
-    #top{
-      font-size: 48px;
-      text-decoration: none;
-      margin:0px;
+/*    #top{
       display:grid;
       grid-template-columns: 2fr 1fr;
-    }
+      font-size: 48px;
+      text-decoration: none;
+      margin:50px;
+      background-image: url("logo.png");
+      background-repeat: no-repeat;
+      background-size:300px;
+      background-position:left;
+      image: url("logo.png");
+    }*/
     #top :hover{
       text-decoration: none;
     }
     #bottom{
       font-size:20px;
       text-align: left;
-      background: rgb(255, 255, 255) transparent;
-      background: rgb(255, 255, 255, 0.6);
-      filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-      -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
       padding:0px;
       margin: 10px 0px 10px 0px;
     }
 
-    .container{
-      padding: 0px;
-      margin: 0px;
-    }
-    .main1{
-      font:64px bold;
-      height: 100px;
-      /* padding: 30px 0px 30px 0px; */
-    }
-    .main2{
-      font:20px bold;
-      padding:10px 0px 10px 0px;
-    }
-    .main1, .main2 {
-      text-align: center;
-      width: 400px;
-      background: rgb(255, 255, 255) transparent;   /* Fallback for web browsers that doesn't support RGBa */
-      background: rgba(255, 255, 255, 0.6);   /* RGBa with 0.6 opacity */
-      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);  /* For IE 5.5 - 7*/
-      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";  /* For IE 8*/
-      background-position: center;
-      }
-
     @media(max-width:1250px){
       #grid{
         display: grid;
-        grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr;
       }
       #box1, #box2, #box3, #box4{
         width:cover;
@@ -164,11 +169,7 @@
         padding:0px;
         margin:0;
       }
-    @media(max-width:765px){
-      #grid{
-        display: grid;
-        grid-template-columns:1fr 1fr 1fr 1fr;
-      }
+    @media(max-width:950px){
       #box1, #box2, #box3, #box4{
         width:cover;
         padding:70px 0px 70px 0px;
@@ -178,13 +179,21 @@
         padding:0px;
         font:48px bold;
       }
-      .main2{
-        margin:0;
-      }
 
-    @media(max-width:480px){
+      @media(max-width:830px){
+          #box1, #box2, #box3, #box4{
+            width:auto;
+        }
+        .main1, .main2{
+          width:auto;
+        }
+/*        .main1,{
+          font-size: 56px;
+        }
+*/
+    @media(max-width:500px){
       #mypage{
-        font-size: 30%;
+        font-size: 80%;
       }
       #top{
         font-size:36px;
@@ -214,17 +223,38 @@
     </style>
   </head>
   <body>
-  	<h1 id="top">
+<!--
+  	<div class="container">
+      <h1 id="top">
       <a href="main.html">Hipcloset</a>
-      <div id="mypage">
-        <a class="align-bottom" href="mypage.html">MY PAGE</a>
-      </div>
-    </h1>
-    <br>
+        <div id="mypage">
+          <a class="align-bottom" href="mypage.html">MY PAGE</a>
+        </div>
+      </h1>
+    </div>
+    </br>
+
+    <div class="position-static">...</div>
+    <div class="position-relative">...</div>
+    <div class="position-absolute">...</div>
+    <div class="position-fixed">...</div>
+    <div class="position-sticky">...</div>
+ --!>
+
+ <div class="containe">
+   <a href="javascript:goMain();">
+    <img alt="메인화면" src="logo.png" width="50%">
+   </a>
+   <div id="mypage">
+     <a class="align-bottom" href="mypage.html">MY PAGE</a>
+   </div>
+ </div>
 
     <div id="backpage">
-      <div class="container" id="back">
-        <div class="col-" style="background-color:lavenderblush;">
+    <br/><br/>
+
+      <div class="container">
+        <div class="col-" id="grid" style="background-color:lavenderblush;">
           <div class="col-xs-6" style="background-color:lavender;">
             <div id="box1">
               <div href="photo.html">
@@ -271,7 +301,7 @@
         <div>
           <div id = "bottom">
             <p class="font-weight-bold">Hipcloset</p>
-          
+
             Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
           </div>
         </div>
