@@ -36,25 +36,25 @@
     </script>
 
     <style>
-    body, #top, .main1, .main2{
+    body, .main1, .main2{
       font-family : "NANUMSQUARER";
-    }
+    }/*
     body {
-      /* font-family : 'NANUMSQUARER';
+      font-family : 'NANUMSQUARER';
       background-image: url("back.jpg");
       width: auto;
       height: auto;
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center;*/
-    }
+      background-position: center;
+    }*/
     a{
       text-decoration-line: none;
       color:black;
-    }
+    }/*
     div{
       text-align:center;
-    }
+    }*/
 
     .container{
       padding: 0px;
@@ -73,19 +73,20 @@
       text-align: center;
       width: cover;
       background-position: center;
-    }
-
-    .main1, .main2, #bottom{
       background: rgb(255, 255, 255) transparent;
       background: rgb(255, 255, 255, 0.6);
       filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
       -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+
+    }
+
+    .main1, .main2, #bottom{
     }
 
     #backpage{
-      background-image: url("back.jpg");
+      background-image: url("back.jpg");/*
       width: auto;
-      height: auto;
+      height: auto;*/
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -99,12 +100,15 @@
     #box1, #box2, #box3, #box4{
       width: cover;
       padding:100px 50px 100px 50px;
-/*    height: 400px;*/
+      height: 400px;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
     #box1 :hover{
+      text-decoration: none;
+    }
+    #mypage :hover{
       text-decoration: none;
     }
     #box2 :hover{
@@ -144,15 +148,20 @@
       background-size:300px;
       background-position:left;
       image: url("logo.png");
-    }*/
+    }
     #top :hover{
       text-decoration: none;
-    }
+    }*/
     #bottom{
       font-size:20px;
       text-align: left;
       padding:0px;
       margin: 10px 0px 10px 0px;
+      background: rgb(255, 255, 255) transparent;
+      background: rgb(255, 255, 255, 0.6);
+      filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+      -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+
     }
 
     @media(max-width:1250px){
@@ -161,7 +170,7 @@
         grid-template-columns:1fr 1fr;
       }
       #box1, #box2, #box3, #box4{
-        width:cover;
+        /*width:cover;*/
         padding:100px 30px 100px 30px;
         font-size:12px;
       }
@@ -169,9 +178,9 @@
         padding:0px;
         margin:0;
       }
-    @media(max-width:950px){
+    @media(max-width:1000px){
       #box1, #box2, #box3, #box4{
-        width:cover;
+        /*width:cover;*/
         padding:70px 0px 70px 0px;
         font-size:12px;
       }
@@ -180,25 +189,25 @@
         font:48px bold;
       }
 
-      @media(max-width:830px){
-          #box1, #box2, #box3, #box4{
-            width:auto;
-        }
-        .main1, .main2{
-          width:auto;
-        }
+    @media(max-width:770px){
+      /*#box1, #box2, #box3, #box4{
+        width:cover;
+      }*/
+      .main1, .main2{
+        width:auto;
+      }
 /*        .main1,{
-          font-size: 56px;
-        }
-*/
+        font-size: 40px;
+      }*/
+
     @media(max-width:500px){
       #mypage{
         font-size: 80%;
-      }
+      }/*
       #top{
         font-size:36px;
         margin:10px 0px 0px;
-      }
+      }*/
       #grid{
         display:block;
         grid-template-columns:none;
@@ -223,90 +232,41 @@
     </style>
   </head>
   <body>
-<!--
-  	<div class="container">
-      <h1 id="top">
-      <a href="main.html">Hipcloset</a>
-        <div id="mypage">
-          <a class="align-bottom" href="mypage.html">MY PAGE</a>
-        </div>
-      </h1>
-    </div>
-    </br>
 
-    <div class="position-static">...</div>
-    <div class="position-relative">...</div>
-    <div class="position-absolute">...</div>
-    <div class="position-fixed">...</div>
-    <div class="position-sticky">...</div>
- --!>
-
- <div class="containe">
-   <a href="javascript:goMain();">
-    <img alt="메인화면" src="logo.png" width="50%">
-   </a>
-   <div id="mypage">
-     <a class="align-bottom" href="mypage.html">MY PAGE</a>
+   <div class="container">
+     <div class="d-flex justify-content-around">
+       <a href="javascript:goMain();">
+        <img alt="메인화면" src="logo.png" width="50%">
+       </a>
+     </div>
+     <div class="align-bottom"  id="mypage">
+       <a href="mypage.html">MY PAGE</a>
+     </div>
    </div>
- </div>
 
-    <div id="backpage">
-    <br/><br/>
 
-      <div class="container">
-        <div class="col-" id="grid" style="background-color:lavenderblush;">
-          <div class="col-xs-6" style="background-color:lavender;">
-            <div id="box1">
-              <div href="photo.html">
-                <div class="main1">촬영
-                </div>
-                </br>
-                <div  class="main2">take photo
-                </div>
-              </div>
-            </div>
-            <div id="box2">
-              <div href="closet.html">
-                <div class="main1">옷장
-                </div>
-                </br>
-                <div  class="main2">my closet
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6" style="background-color:lavender;">
-            <div id="box3">
-              <div href="bloger.html">
-                <div class="main1">블로거코디
-                </div>
-                </br>
-                <div  class="main2">bloger codi
-                </div>
-              </div>
-            </div>
-            <div id="box4">
-              <div href="collection.html">
-                <div class="main1">옷장코디
-                </div>
-                </br>
-                <div  class="main2">my collection
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class = "container">
-        <div>
-          <div id = "bottom">
-            <p class="font-weight-bold">Hipcloset</p>
-
-            Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
-          </div>
-        </div>
-      </div>
-    </div>
+     <div class="container" id="backpage">
+     <br/>
+       <div class="col-">
+         <div class="col-xs-6">
+         <div id="box1"><a href="photo.html">
+           <div class="main1">촬영</div></br><div  class="main2">take photo</div></a></div>
+     		<div id="box2"><a href="2.html">
+           <div class="main1">옷장</div></br><div  class="main2">my closet</div></a></div>
+         </div>
+         <div class="col-xs-6">
+         <div id="box3"><a href="3.html">
+           <div class="main1">블로거코디</div></br><div  class="main2">bloger codi</div></a></div>
+     		<div id="box4"><a href="4.html">
+           <div class="main1">옷장코디</div></br><div  class="main2">my collection</div></a></div>
+         </div>
+       </div>
+       </br>
+       <div id = "bottom">
+         <p class="font-weight-bold">Hipcloset</p>
+         Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
+       </div>
+     </div>
 
   </body>
 
