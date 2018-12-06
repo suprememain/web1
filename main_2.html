@@ -14,15 +14,17 @@
         filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
         -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
         padding:0.5% 0 1% 0;
-        height:100px;
+        height:120px;
         font : 40px arial black;
         line-height:1.6;
         text-decoration:none;
       }
-
+      .col-xs-6{
+        padding:0px;
+      }
       #box1,#box2,#box3,#box4{
         width: cover;
-        padding:200px 30px 200px 30px;
+        padding:100px 30px 100px 30px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -42,10 +44,12 @@
     </style>
   </head>
   <body>
-     <div class="d-flex justify-content-around; col-">
-       <a href="javascript:goMain();col-xs-6">
+     <div class="d-flex justify-content-around;">
+       <div class="col-xs-6">
+         <a href="javascript:goMain();">
         <img alt="메인화면" src="logo4.png" width="50%">
        </a>
+       </div>
        <div id="mypage" class="col-xs-6">
          <a class="align-bottom" href="mypage.html">MY PAGE</a>
        </div>
@@ -67,12 +71,13 @@
           <div class="main1">옷장코디</div><div  class="main2">my collection</div></a></div>
         </div>
       </div>
+      <br/>
 
-      <div class="">
-        <p>
-          Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
-        </p>
-      </div>
+    </div>
+    <div class="container">
+      <p>
+        Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
+      </p>
     </div>
   </body>
 </html>
