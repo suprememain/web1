@@ -102,55 +102,59 @@
   </head>
 
   <body>
-    <div class="container d-flex justify-content-center">
-       <div class="col-xs-8">
-          <a href="javascript:goMain();">
-            <img alt="메인화면" src="logo4.png" width="80%">
-          </a>
-       </div>
 
-   <input id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
+    <div >
 
-   <script>
-   function newDoc() {
-     window.location.assign("mypage.html")
-   }
-   </script>
+      <div class="container d-flex justify-content-center">
+         <div class="col-xs-8">
+            <a href="javascript:goMain();">
+              <img alt="메인화면" src="logo4.png" width="80%">
+            </a>
+         </div>
 
-    </div>
-    <div id="mypage" class="col-4">
-      <a href="javascript:goMain();">
-        <img alt="mypage" src="back.jpg" width="10%">
-      </a>
-    </div>
-    <br/> <br/>
+     <input id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
 
-    <div class="col-" id="back">
-      <div class="row justify-content-center">
-        <div class="col-xs-6">
-          <div id="box1"><a href="photo.html">
-            <div class="main1">촬영</br>take photo</div></a>
+     <script>
+     function newDoc() {
+       window.location.assign("mypage.html")
+     }
+     </script>
+
+      </div>
+<!--      <div id="mypage" class="col-4">
+        <a href="javascript:goMain();">
+          <img alt="mypage" src="back.jpg" width="10%">
+        </a>
+      </div>
+      <br/> <br/> -->
+
+      <div class="col-" id="back">
+        <div class="d-flex justify-content-center">
+          <div class="col-xs-6 d-flex ">
+            <div id="box1"><a href="photo.html">
+              <div class="main1">촬영</br>take photo</div></a>
+            </div>
+            <div id="box2"><a href="closet.html">
+              <div class="main1">옷장</br>my closet</div></a>
+            </div>
           </div>
-          <div id="box2"><a href="closet.html">
-            <div class="main1">옷장</br>my closet</div></a>
+          <div class="col-xs-6 d-flex ">
+            <div id="box3"><a href="blogger.html">
+              <div class="main1">블로거코디</br>blogger codi</div></a>
+            </div>
+            <div id="box4"><a href="collection.html">
+              <div class="main1">옷장코디</br>my collection</div></a>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-6">
-          <div id="box3"><a href="blogger.html">
-            <div class="main1">블로거코디</br>blogger codi</div></a>
-          </div>
-          <div id="box4"><a href="collection.html">
-            <div class="main1">옷장코디</br>my collection</div></a>
+          <div class="container; center ">
+            <p id="explain">
+              Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="container; center">
-        <p id="explain">
-          Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
-        </p>
-      </div>
-    </div>
 
+    </div>
   </body>
 </html>
