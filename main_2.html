@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-<!--      $grid-columns:      12;
+      $grid-columns:      12;
       $grid-gutter-width: 30px;
 
       $grid-breakpoints: (
@@ -34,19 +34,18 @@
       $grid-columns: 12 !default;
       $grid-gutter-width: 30px !default;
 
--->
+
     </script>
 
     <style media="screen">
-      div.main1, #explain{
+      div.main1, #explain {
         background: rgb(255, 255, 255) transparent;
         background: rgb(255, 255, 255, 0.6);
         filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
         -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
         padding:0.5% 0 1% 0;
         height:cover;
-        font : 5vw Futura black;
-/*        font-size:7vw;*/
+        font : 5vw gothic black;
         line-height:1.6;
         text-decoration:none;
       }
@@ -62,27 +61,27 @@
             }
         }
 
-      .container d-flex justify-content-around{
-        margin: 0px;
-
+      .container d-flex justify-content-center{
+        margin-top: 0px;
       }
       .container {
         margin:10px;
       }
       .main1 {
-        height: 250px;
+        height: auto;
+
       }
       #back {
         background-image: url("back.jpg");
       }
       #mypage{
-        font-size: 15px;
-        content-align:right;
+
+        font : 15px black;
       }
       #box1,#box2,#box3,#box4{
         width: cover;
-        height: 400px;
-        padding:100px 30px 100px 30px;
+        height: auto;
+        padding:150px 30px 150px 30px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -109,34 +108,30 @@
   <body>
 
     <div >
-         <div class="col-xs-">
-      <div class="container d-flex justify-content-center">
 
-          <div class="col-xs-8">
-            <a href="javascript:goMain();">
-              <img alt="메인화면" src="logo4.png" width="80%">
-            </a>
-          </div>
-          <div class="col-xs-4">
-            <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
-            <script>
-            function newDoc() {
-              window.location.assign("mypage.html")
-            }
-            </script>
-          </div>
-        </div>
-
-      </div>
-
-<!--      <div id="mypage" class="col-xs-4">
-        <a href="javascript:goMain();">
-          <img alt="mypage" src="back.jpg" width="10%">
-        </a>
-      </div>
-      <br/> <br/> -->
 
       <div class="col-" id="back">
+        <br/>
+        <div class="col-xs-">
+         <div class="container d-flex justify-content-center">
+           <div class="col-xs-8">
+             <a href="javascript:goMain();">
+               <img alt="메인화면" src="logo4.png" width="80%">
+             </a>
+           </div>
+           <div class="col-xs-4">
+             <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
+             <script>
+             function newDoc() {
+               window.location.assign("mypage.html")
+             }
+             </script>
+           </div>
+         </div>
+       </div>
+
+
+
         <div class="d-flex justify-content-center">
           <div class="col-xs-6">
             <div id="box1"><a href="photo.html">
@@ -156,12 +151,12 @@
           </div>
 
         </div>
-        <br/>
         <div class="container-center">
           <p id="explain">
             Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
           </p>
         </div>
+        <br/>
       </div>
 
 
