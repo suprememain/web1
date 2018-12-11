@@ -38,7 +38,7 @@
     </script>
 
     <style media="screen">
-      div.main1, #explain {
+      #explain {
         background: rgb(255, 255, 255) transparent;
         background: rgb(255, 255, 255, 0.6);
         filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
@@ -68,7 +68,19 @@
         margin:10px;
       }
       .main1 {
-        height: auto;
+        background-color: white;
+        color: black;
+        font-size: 2vw;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        mix-blend-mode: screen;
 
       }
       #back {
@@ -85,6 +97,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+
       }
       #box1{
         background-image: url("1.jpg");
@@ -107,9 +120,7 @@
 
   <body>
 
-    <div >
-
-
+    <div>
       <div class="col-" id="back">
         <br/>
         <div class="col-xs-">
@@ -129,7 +140,7 @@
            </div>
          </div>
        </div>
-
+       <br/>
 
 
         <div class="d-flex justify-content-center">
