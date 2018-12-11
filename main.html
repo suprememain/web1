@@ -96,7 +96,7 @@
       }
       #explain {
         font-size: 24px;
-        margin:10px;
+        margin:0px;
       }
     </style>
   </head>
@@ -104,29 +104,26 @@
   <body>
 
     <div >
-
-      <div class="container d-flex justify-content-center">
-         <div class="col-xs-">
+      <div class="col-xs-">
+        <div class="container d-flex justify-content-center">
+          <div class="col-xs-8">
             <a href="javascript:goMain();">
               <img alt="메인화면" src="logo4.png" width="80%">
             </a>
-         </div>
+          </div>
+          <div class="col-xs-4">
+            <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
 
-     <input id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
+            <script>
+            function newDoc() {
+              window.location.assign("mypage.html")
+            }
+            </script>
 
-     <script>
-     function newDoc() {
-       window.location.assign("mypage.html")
-     }
-     </script>
-
+          </div>
+        </div>
       </div>
-<!--      <div id="mypage" class="col-4">
-        <a href="javascript:goMain();">
-          <img alt="mypage" src="back.jpg" width="10%">
-        </a>
-      </div>
-      <br/> <br/> -->
+
 
       <div class="col-" id="back">
         <div class="d-flex justify-content-center">
