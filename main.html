@@ -61,14 +61,17 @@
             }
         }
 
-      .container d-flex justify-content-center{
-        margin-top: 0px;
+      .container d-flex justify-content-around{
+        margin: 0px;
+
       }
       .container {
         margin:10px;
       }
       .main1 {
         height: auto;
+        text-align: center;
+        text-decoration: none;
 
       }
       #back {
@@ -107,30 +110,28 @@
 
   <body>
 
-    <div >
-
-
+    <div>
       <div class="col-" id="back">
-        <br/>
-        <div class="col-xs-">
+      </br>
+       <div class="col-xs-">
          <div class="container d-flex justify-content-center">
-           <div class="col-xs-8">
-             <a href="javascript:goMain();">
-               <img alt="메인화면" src="logo4.png" width="80%">
-             </a>
-           </div>
-           <div class="col-xs-4">
-             <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
-             <script>
-             function newDoc() {
-               window.location.assign("mypage.html")
-             }
-             </script>
-           </div>
-         </div>
-       </div>
 
-
+          <div class="col-xs-8">
+            <a href="javascript:goMain();">
+              <img alt="메인화면" src="logo4.png" width="80%">
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
+            <script>
+            function newDoc() {
+              window.location.assign("mypage.html")
+            }
+            </script>
+          </div>
+        </div>
+      </div>
+      </br>
 
         <div class="d-flex justify-content-center">
           <div class="col-xs-6">
@@ -158,7 +159,6 @@
         </div>
         <br/>
       </div>
-
 
     </div>
   </body>
