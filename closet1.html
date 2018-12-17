@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MAIN-CODI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--
+    <script type="text/javascript">
+      $grid-columns:      12;
+      $grid-gutter-width: 30px;
+
+      $grid-breakpoints: (
+      // Extra small screen / phone
+      xs: 0,
+      // Small screen / phone
+      sm: 576px,
+      // Medium screen / tablet
+      md: 768px,
+      // Large screen / desktop
+      lg: 992px,
+      // Extra large screen / wide desktop
+      xl: 1200px
+      );
+
+      $container-max-widths: (
+      sm: 540px,
+      md: 720px,
+      lg: 960px,
+      xl: 1140px
+      );
+
+      $grid-columns: 12 !default;
+      $grid-gutter-width: 30px !default;
+
+
+    </script> -->
+
+    <style media="screen">
+/*      div.main1, #explain{
+        background: rgb(255, 255, 255) transparent;
+        background: rgb(255, 255, 255, 0.6);
+        filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+        -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+        padding:0.5% 0 1% 0;
+        height:cover;
+        font : 5vw Futura black;
+        line-height:1.6;
+        text-decoration:none;
+      }
+      .col-xs-6, .container{
+        padding:0px;
+        width: cover;
+        @include make-col-ready();
+        @include media-breakpoint-up(xs) {
+            @include make-col(6);
+          }
+            @include media-breakpoint-up(lg) {
+              @include make-col(4);
+            }
+        }
+
+      .container d-flex justify-content-around{
+        margin: 0px;
+
+      }
+      .container {
+        margin:10px;
+      }
+      .main1 {
+        height: auto;
+
+      }
+      #back {
+        background-image: url("back.jpg");
+      }
+      #mypage{
+        font-size: 15px;
+      }
+      #box1,#box2,#box3,#box4{
+        width: cover;
+        height: auto;
+        padding:100px 30px 100px 30px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      #box1{
+        background-image: url("1.jpg");
+      }
+      #box2{
+        background-image: url("2.jpg");
+      }
+      #box3{
+        background-image: url("3.jpg");
+      }
+      #box4{
+        background-image: url("4.jpg");
+      }
+      #explain {
+        font-size: 24px;
+        margin: 0px;
+      }
+
+
+      // Have a rule differ in different sizes
+      @mixin responsive-property( $rule, $sizes... ) {
+      	@each $size in $sizes {
+      		$i: index( $sizes, $size );
+      		@if $size == nth( $sizes, 1 ) {
+      			#{$rule}: $size;
+      		} @else {
+      			@include media-breakpoint-up( nth( map-keys( $grid-breakpoints ), $i ) ) {
+      				#{$rule}: $size;
+      			};
+      		}
+      	}
+      }
+
+      // Same as adding a 'container' class in non-sass Bootstrap
+      @mixin make-cont() {
+      	@include make-container();
+      	@include make-container-max-widths();
+      }
+
+      // One mixin to rule all col makings
+      @mixin make-cols( $cols... ) {
+      	@include make-col-ready();
+      	@for $i from 1 through length( $grid-breakpoints ) {
+      		@if length( $cols ) >= $i {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, $i ) );
+      			}
+      		} @else {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, length( $cols ) ) );
+      			}
+      		}
+      	}
+      }
+
+      // One mixin to rule all col offsets
+      @mixin make-col-offsets( $cols... ) {
+      	@for $i from 1 through length( $grid-breakpoints ) {
+      		@if length( $cols ) >= $i {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				margin-left: percentage( nth( $cols, $i ) / $grid-columns );
+      			}
+      		} @else {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				margin-left: percentage( nth( $cols, length( $cols ) ) / $grid-columns );
+      			}
+      		}
+      	}
+      }
+
+      // Making cols centered
+      @mixin make-centered-cols( $cols... ) {
+      	@for $i from 1 through length( $grid-breakpoints ) {
+      		@if length( $cols ) >= $i {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, $i ) );
+      				@include make-col-offset( ( 12 - nth( $cols, $i ) ) / 2 );
+      			}
+      		} @else {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, length( $cols ) ) );
+      				@include make-col-offset( ( 12 - nth( $cols, length( $cols ) ) ) / 2 );
+      			}
+      		}
+      	}
+      }
+
+      // The rest
+      @mixin make-col-xs( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, xs )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-sm( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, sm )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-md( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, md )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-lg( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, lg )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-xl( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, xl )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+*/
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+
+    .row {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    .column {
+      -ms-flex: 20%; /* IE10 */
+      flex: 20%;
+      max-width: 20%;
+      padding: 0 4px;
+      max-height: 210px;
+    }
+
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      size: cover;
+      repeat: no-repeat;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div >
+
+      <div class="col-xs-">
+        <div class="container d-flex justify-content-center">
+          <div class="col-xs-">
+            <a href="main.html">
+              <img alt="메인화면" src="logo4.png" width="80%">
+            </a>
+          </div>
+          <div>
+            <a>
+              <h1>My Page</h1>
+            </a>
+         </div>
+
+
+         <!-- Header -->
+         <div class="header">
+           <h1>Responsive Image Grid</h1>
+           <p>Resize the browser window to see the responsive effect.</p>
+         </div>
+
+         <!-- Photo Grid -->
+         <div class="row">
+           <div class="column">
+             <img src="photo/0-1.jpg" style="width:100%">
+             <img src="photo/0-2.jpg" style="width:100%">
+             <img src="photo/0-3.jpg" style="width:100%">
+             <img src="photo/0-4.jpg" style="width:100%">
+             <img src="photo/0-5.jpg" style="width:100%">
+           </div>
+           <div class="column">
+             <img src="photo/0-6.jpg" style="width:100%">
+             <img src="photo/0-7.jpg" style="width:100%">
+             <img src="photo/0-8.jpg" style="width:100%">
+             <img src="photo/0-9.jpg" style="width:100%">
+             <img src="photo/0-10.jpg" style="width:100%">
+             <img src="photo/0-11.jpg" style="width:100%">
+             <img src="photo/0-17.jpg" style="width:100%">
+           </div>
+           <div class="column">
+             <img src="photo/0-12.jpg" style="width:100%">
+             <img src="photo/0-13.jpg" style="width:100%">
+             <img src="photo/0-14.jpg" style="width:100%">
+             <img src="photo/0-15.jpg" style="width:100%">
+             <img src="photo/0-16.jpg" style="width:100%">
+           </div>
+           <div class="column">
+             <img src="photo/0-18.jpg" style="width:100%">
+             <img src="photo/0-19.jpg" style="width:100%">
+             <img src="photo/0-20.jpg" style="width:100%">
+             <img src="photo/0-21.jpg" style="width:100%">
+             <img src="photo/0-23.jpg" style="width:100%">
+             <img src="photo/0-24.jpg" style="width:100%">
+             <img src="photo/0-25.jpg" style="width:100%">
+             <img src="photo/0-22.jpg" style="width:100%">
+           </div>
+           <div class="column">
+             <img src="photo/0-26.jpg" style="width:100%">
+             <img src="photo/0-17.jpg" style="width:100%">
+             <img src="photo/0-26.jpg" style="width:100%">
+             <img src="photo/0-21.jpg" style="width:100%">
+             <img src="photo/0-22.jpg" style="width:100%">
+             <img src="photo/0-23.jpg" style="width:100%">
+             <img src="photo/0-24.jpg" style="width:100%">
+             <img src="photo/0-25.jpg" style="width:100%">
+           </div>
+         </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
