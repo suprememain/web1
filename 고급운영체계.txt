@@ -1,4 +1,7 @@
+
+
 1. Microsoft Win32 응용에서 사용할 수 있는 Thread 생성 함수 3가지의 원형과 입력/출력 파라미터를 설명하고 그 차이를 기술
+
 -IA-32 Architecture
 * The memory management of IA-32 incorporates segmentation as well as paging scheme
 
@@ -10,6 +13,95 @@
  - 16-bits selector can accomodate 16K number of segments in total (8K for global and 8K for local),
   each of which is of the size 4GB (32 bits offset)
  - based on the descriptor table indexed by the selector, 32-bits linear address is generated.
+
+ . Paging Unit: 10-bits outer (page directory) and 10-bits inner page number with 12-bits offset for 4KB page
+ - A special bit in the page directory (outer page number) indicates that this page is a 4MB page (22 bits for page offset in this case)
+ - The CR3 register points to the page directory for the current process (removes memory access for page directory)
+
+ ** If the inner page table is currently swapped our to disk, then the page directory will have an 'invalid bit' set, and the remaining 31 bits provied information on where to find the swapped out page table on the disk.
+
+ . PAE (Page Address Extention) - for accessing physical address larger than 4GB
+ - Three level paging scheme is incorporated with 32-bits linear address structure of
+ 1) 2-bits page directory pointer table, 2) 9-bits page directory, 3) 9-bits page table, and 4) 12-bits page offset
+ - Using such three level paging scheme, 2MB page is supported (11-bits of page directory pointer table and page directory table leaves the following 21-bits for designating offsets of 2MB (i.e., instead of 4MB big page before))
+ - By extending the size of each entry in page directory and page table, 20-bits of base address in two level page has been extended to become 24-bits, which can address 64GB physical memory space
+
+ ** PAE is supported by both Linux and Mac OS X but not by 32-bit versions of Windows OS.
+
+
+- x86-64 Architecture
+ * This architecture currently provides a 48-bits virtual address (not fully 64 bit address - 16 E(xa)B address) with support for page sizes 4KB, 2MB, or 1GB using 4 levels of paging hierarchy
+
+ . Since the addressing scheme can use PAE,
+  virtual address uses 48-bits but supports for 52-bits of physical address space (corresponds to 4,096 TB physical memory)
+
+ ** Note that the hierarchical structure of page table is to minimize the size of page table to be kept for each process
+
+
+
+
+4. Safe Sequence의 의미를 설명하고, Banker's Algorithm을 통해 Safe Sequence를 검출하는 방법에 대해 예를 들어 설명
+
+
+-Banker's Algorithm
+
+* Definitions
+ . m: the number of resource tyeps
+ . int Available[m]: Available[j]=k means that k instance of Rj (resource type) is avaliable
+ . n: the number of processes running
+ . int Max[n][m]: Max[i][j]=k neans the process Pi may request the instances of R, as many as k.
+ . int Allocation[n][m]: Allocation[i][j]=k means the process Pi is currently allocated k instances of the resource Rj
+ . int Need[n][m]: Need[i][j]=k means the process Pi may meed k more instances of resources type Rj (i.e. Need[i][j] = Max[i][j] - Allocation[i][j])
+ . Allocationi, Maxj, and Needi are the i-th row vector (for i-th process) of Allocation, Max, and Need matrix, respectively.
+ . For two vectors X and X, Y <= Y means that X[i] <= Y[i], for all i.
+
+
+* Safty Check Algorithm
+ 1) define Work = Available and Finish[i] = false, for i=0, 1, ..., n-1 (the number of processes)
+ 2) find i such that Finish[i] == false and Needi<=Worki at the same time. If so such i exists, GoTo4. (find process to be allocated)
+ 3) Worki = Worki + Allocationi, Finish[i]=true, and GoTo 2. (assume finished)
+ 4) if Finish[i] == true for all i, then the system is in a safe state (with safe sequence of Pi's found in 2 in order)
+
+
+* Resource-Request Algorithm
+ Let Requesti be the request vector for the process Pi. When a request for resources is made by Pi,
+ 1) check Requesti <= Needi, if failure, raise an error. (check maximum request bound)
+ 2) Check Requesti <= Available, GoTo 3. If failure, Pi must wait. (check request can be allocated)
+ 3) Change Available -= Requesti, Allocationi += Requesti, and Needi -= Requesti (pretend the allocation is granted)
+  Then run the safty check algorithm to grant the request or to wait the request.
+
+
+* An illustrative example
+ . Suppose that, at time T0, the right side of system is given.
+ . The system is currently safe with safe sequence <P1, P3, P4, P2, P0>
+ . At time T1, suppose that Request1 = (1, 0, 2) is given.
+  The request is less than Max1, and Available.
+ . Safety check algorithm is done on.
+
+             Allocation     Max    Available     Need
+                ABC         ABC       ABC         ABC
+   P0          010          753       332          743
+   P1          200          322                     122
+   P2          302          902                     600
+   P3          211          222                     011
+   P4          002          433                     431
+
+             Allocation     Need     Available
+                ABC          ABC        ABC
+   P0          010          743         230
+   P1          302          020
+   P2          302          600
+   P3          211          011
+   P4          002          431
+
+  gives a safe sequence <P1, P3, P4, P0, P2> and thus the request is willing to be granted.
+
+
+
+5. 멀티코어 프로세서에서 프로세스 Pre-emption 시 Cache Inconsistency (Invalition) 문제와 Process Affinity 방법에 대해서
+
+
+
 
 
 
@@ -31,6 +123,9 @@
  which is an array of base-limit register pairs for each segment.
  . By using separate base registers, segmentation can use non-contiguous memory for a process
  . The base-limit register usage may requires 'compaction' on the basis of segment (for the contiguous allocation for each segment)
+
+
+
 
 
 
