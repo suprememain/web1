@@ -2,43 +2,156 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>MAIN-CODI</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>closet1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 <!--
-    <script type="text/javascript">
-      $grid-columns:      12;
-      $grid-gutter-width: 30px;
+    <script>
+//Get the elements with class="column"
+    var elements = document.getElementsByClassName("column");
+    //Declare a loop variable
+    var i;
 
-      $grid-breakpoints: (
-      // Extra small screen / phone
-      xs: 0,
-      // Small screen / phone
-      sm: 576px,
-      // Medium screen / tablet
-      md: 768px,
-      // Large screen / desktop
-      lg: 992px,
-      // Extra large screen / wide desktop
-      xl: 1200px
-      );
+    //Full-width images
+    function one() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.msFlex = "100%"; //IE10
+      }
+      elements[i].style.flex = "100%";
+    }
 
-      $container-max-widths: (
-      sm: 540px,
-      md: 720px,
-      lg: 960px,
-      xl: 1140px
-      );
+    //Two images side by side
+    function two() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.msFlex = "50%"; //IE10
+        elements[i].style.flex = "50%";
+      }
+    }
 
-      $grid-columns: 12 !default;
-      $grid-gutter-width: 30px !default;
+    // Four images side by side
+    function four() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.msFlex = "25%";
+        elements[i].style.flex = "25%";
+      }
+    }
 
-
-    </script> -->
-
+    // Add active class to the current button ()
+    </script>
+-->
     <style media="screen">
-/*      div.main1, #explain{
+
+
+          // Have a rule differ in different sizes
+          @mixin responsive-property( $rule, $sizes... ) {
+          	@each $size in $sizes {
+          		$i: index( $sizes, $size );
+          		@if $size == nth( $sizes, 1 ) {
+          			#{$rule}: $size;
+          		} @else {
+          			@include media-breakpoint-up( nth( map-keys( $grid-breakpoints ), $i ) ) {
+          				#{$rule}: $size;
+          			};
+          		}
+          	}
+          }
+
+          // Same as adding a 'container' class in non-sass Bootstrap
+          @mixin make-cont() {
+          	@include make-container();
+          	@include make-container-max-widths();
+          }
+
+          // One mixin to rule all col makings
+          @mixin make-cols( $cols... ) {
+          	@include make-col-ready();
+          	@for $i from 1 through length( $grid-breakpoints ) {
+          		@if length( $cols ) >= $i {
+          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+          				@include make-col( nth( $cols, $i ) );
+          			}
+          		} @else {
+          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+          				@include make-col( nth( $cols, length( $cols ) ) );
+          			}
+          		}
+          	}
+          }
+
+          // One mixin to rule all col offsets
+          @mixin make-col-offsets( $cols... ) {
+          	@for $i from 1 through length( $grid-breakpoints ) {
+          		@if length( $cols ) >= $i {
+          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+          				margin-left: percentage( nth( $cols, $i ) / $grid-columns );
+          			}
+          		} @else {
+          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+          				margin-left: percentage( nth( $cols, length( $cols ) ) / $grid-columns );
+          			}
+          		}
+          	}
+          }
+
+          // Making cols centered
+          @mixin make-centered-cols( $cols... ) {
+          	@for $i from 1 through length( $grid-breakpoints ) {
+          		@if length( $cols ) >= $i {
+          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+          				@include make-col( nth( $cols, $i ) );
+          				@include make-col-offset( ( 12 - nth( $cols, $i ) ) / 2 );
+          			}
+          		} @else {
+          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+          				@include make-col( nth( $cols, length( $cols ) ) );
+          				@include make-col-offset( ( 12 - nth( $cols, length( $cols ) ) ) / 2 );
+          			}
+          		}
+          	}
+          }
+
+          // The rest
+          @mixin make-col-xs( $cols ) {
+          	@include make-col-ready();
+          	@media (min-width: #{map-get( $grid-breakpoints, xs )}) {
+          		@include make-col( $cols );
+          	}
+          }
+
+          @mixin make-col-sm( $cols ) {
+          	@include make-col-ready();
+          	@media (min-width: #{map-get( $grid-breakpoints, sm )}) {
+          		@include make-col( $cols );
+          	}
+          }
+
+          @mixin make-col-md( $cols ) {
+          	@include make-col-ready();
+          	@media (min-width: #{map-get( $grid-breakpoints, md )}) {
+          		@include make-col( $cols );
+          	}
+          }
+
+          @mixin make-col-lg( $cols ) {
+          	@include make-col-ready();
+          	@media (min-width: #{map-get( $grid-breakpoints, lg )}) {
+          		@include make-col( $cols );
+          	}
+          }
+
+          @mixin make-col-xl( $cols ) {
+          	@include make-col-ready();
+          	@media (min-width: #{map-get( $grid-breakpoints, xl )}) {
+          		@include make-col( $cols );
+          	}
+          }
+
+
+
+        div.main1, #explain{
         background: rgb(255, 255, 255) transparent;
         background: rgb(255, 255, 255, 0.6);
         filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
@@ -104,111 +217,6 @@
       }
 
 
-      // Have a rule differ in different sizes
-      @mixin responsive-property( $rule, $sizes... ) {
-      	@each $size in $sizes {
-      		$i: index( $sizes, $size );
-      		@if $size == nth( $sizes, 1 ) {
-      			#{$rule}: $size;
-      		} @else {
-      			@include media-breakpoint-up( nth( map-keys( $grid-breakpoints ), $i ) ) {
-      				#{$rule}: $size;
-      			};
-      		}
-      	}
-      }
-
-      // Same as adding a 'container' class in non-sass Bootstrap
-      @mixin make-cont() {
-      	@include make-container();
-      	@include make-container-max-widths();
-      }
-
-      // One mixin to rule all col makings
-      @mixin make-cols( $cols... ) {
-      	@include make-col-ready();
-      	@for $i from 1 through length( $grid-breakpoints ) {
-      		@if length( $cols ) >= $i {
-      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-      				@include make-col( nth( $cols, $i ) );
-      			}
-      		} @else {
-      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-      				@include make-col( nth( $cols, length( $cols ) ) );
-      			}
-      		}
-      	}
-      }
-
-      // One mixin to rule all col offsets
-      @mixin make-col-offsets( $cols... ) {
-      	@for $i from 1 through length( $grid-breakpoints ) {
-      		@if length( $cols ) >= $i {
-      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-      				margin-left: percentage( nth( $cols, $i ) / $grid-columns );
-      			}
-      		} @else {
-      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-      				margin-left: percentage( nth( $cols, length( $cols ) ) / $grid-columns );
-      			}
-      		}
-      	}
-      }
-
-      // Making cols centered
-      @mixin make-centered-cols( $cols... ) {
-      	@for $i from 1 through length( $grid-breakpoints ) {
-      		@if length( $cols ) >= $i {
-      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-      				@include make-col( nth( $cols, $i ) );
-      				@include make-col-offset( ( 12 - nth( $cols, $i ) ) / 2 );
-      			}
-      		} @else {
-      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-      				@include make-col( nth( $cols, length( $cols ) ) );
-      				@include make-col-offset( ( 12 - nth( $cols, length( $cols ) ) ) / 2 );
-      			}
-      		}
-      	}
-      }
-
-      // The rest
-      @mixin make-col-xs( $cols ) {
-      	@include make-col-ready();
-      	@media (min-width: #{map-get( $grid-breakpoints, xs )}) {
-      		@include make-col( $cols );
-      	}
-      }
-
-      @mixin make-col-sm( $cols ) {
-      	@include make-col-ready();
-      	@media (min-width: #{map-get( $grid-breakpoints, sm )}) {
-      		@include make-col( $cols );
-      	}
-      }
-
-      @mixin make-col-md( $cols ) {
-      	@include make-col-ready();
-      	@media (min-width: #{map-get( $grid-breakpoints, md )}) {
-      		@include make-col( $cols );
-      	}
-      }
-
-      @mixin make-col-lg( $cols ) {
-      	@include make-col-ready();
-      	@media (min-width: #{map-get( $grid-breakpoints, lg )}) {
-      		@include make-col( $cols );
-      	}
-      }
-
-      @mixin make-col-xl( $cols ) {
-      	@include make-col-ready();
-      	@media (min-width: #{map-get( $grid-breakpoints, xl )}) {
-      		@include make-col( $cols );
-      	}
-      }
-
-*/
 
     * {
       box-sizing: border-box;
@@ -248,7 +256,7 @@
       repeat: no-repeat;
     }
 
-    /* Responsive layout - makes a two column-layout instead of four columns */
+    /* Responsive layout - makes a two column-layout instead of four columns
     @media screen and (max-width: 800px) {
       .column {
         -ms-flex: 50%;
@@ -257,14 +265,14 @@
       }
     }
 
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+     Responsive layout - makes the two columns stack on top of each other instead of next to each other
     @media screen and (max-width: 600px) {
       .column {
         -ms-flex: 100%;
         flex: 100%;
         max-width: 100%;
       }
-    }
+    }*/
     </style>
 
   </head>
@@ -273,76 +281,147 @@
 
     <div >
 
+
       <div class="col-xs-">
         <div class="container d-flex justify-content-center">
-          <div class="col-xs-">
+          <div class="col-xs-8">
             <a href="main.html">
               <img alt="메인화면" src="logo4.png" width="80%">
             </a>
           </div>
-          <div>
-            <a>
-              <h1>My Page</h1>
-            </a>
-         </div>
+          <div class="col-xs-4">
+            <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
 
+            <script>
+            function newDoc() {
+              window.location.assign("mypage.html")
+            }
+            </script>
 
-         <!-- Header -->
-         <div class="header">
-           <h1>Responsive Image Grid</h1>
-           <p>Resize the browser window to see the responsive effect.</p>
-         </div>
-
-         <!-- Photo Grid -->
-         <div class="row">
-           <div class="column">
-             <img src="photo/0-1.jpg" style="width:100%">
-             <img src="photo/0-2.jpg" style="width:100%">
-             <img src="photo/0-3.jpg" style="width:100%">
-             <img src="photo/0-4.jpg" style="width:100%">
-             <img src="photo/0-5.jpg" style="width:100%">
-           </div>
-           <div class="column">
-             <img src="photo/0-6.jpg" style="width:100%">
-             <img src="photo/0-7.jpg" style="width:100%">
-             <img src="photo/0-8.jpg" style="width:100%">
-             <img src="photo/0-9.jpg" style="width:100%">
-             <img src="photo/0-10.jpg" style="width:100%">
-             <img src="photo/0-11.jpg" style="width:100%">
-             <img src="photo/0-17.jpg" style="width:100%">
-           </div>
-           <div class="column">
-             <img src="photo/0-12.jpg" style="width:100%">
-             <img src="photo/0-13.jpg" style="width:100%">
-             <img src="photo/0-14.jpg" style="width:100%">
-             <img src="photo/0-15.jpg" style="width:100%">
-             <img src="photo/0-16.jpg" style="width:100%">
-           </div>
-           <div class="column">
-             <img src="photo/0-18.jpg" style="width:100%">
-             <img src="photo/0-19.jpg" style="width:100%">
-             <img src="photo/0-20.jpg" style="width:100%">
-             <img src="photo/0-21.jpg" style="width:100%">
-             <img src="photo/0-23.jpg" style="width:100%">
-             <img src="photo/0-24.jpg" style="width:100%">
-             <img src="photo/0-25.jpg" style="width:100%">
-             <img src="photo/0-22.jpg" style="width:100%">
-           </div>
-           <div class="column">
-             <img src="photo/0-26.jpg" style="width:100%">
-             <img src="photo/0-17.jpg" style="width:100%">
-             <img src="photo/0-26.jpg" style="width:100%">
-             <img src="photo/0-21.jpg" style="width:100%">
-             <img src="photo/0-22.jpg" style="width:100%">
-             <img src="photo/0-23.jpg" style="width:100%">
-             <img src="photo/0-24.jpg" style="width:100%">
-             <img src="photo/0-25.jpg" style="width:100%">
-           </div>
-         </div>
-
-
+          </div>
         </div>
       </div>
+
+         <!-- Header -->
+         <div class="header" id = "myHeader">
+           <h1>Image Grid</h1>
+           <p>Click on the buttons to change the grid view.</p>
+         </div>
+
+
+         <div class="container">
+           <h2>Accordion Example</h2>
+           <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+           <div class="panel-group" id="accordion">
+             <div class="panel panel-default">
+               <div class="panel-heading">
+                 <h4 class="panel-title">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+                 </h4>
+               </div>
+               <div id="collapse1" class="panel-collapse collapse in">
+                 <!-- Photo Grid -->
+                 <div class="row">
+                   <div class="column">
+                     <img src="photo/0-5.jpg" style="width:100%">
+                     <img src="photo/0-2.jpg" style="width:100%">
+                     <img src="photo/0-4.jpg" style="width:100%">
+                     <img src="photo/0-1.jpg" style="width:100%">
+                     <img src="photo/0-3.jpg" style="width:100%">
+                   </div>
+                   <div class="column">
+                     <img src="photo/0-17.jpg" style="width:100%">
+                     <img src="photo/0-11.jpg" style="width:100%">
+                     <img src="photo/0-8.jpg" style="width:100%">
+                     <img src="photo/0-7.jpg" style="width:100%">
+                     <img src="photo/0-10.jpg" style="width:100%">
+                     <img src="photo/0-6.jpg" style="width:100%">
+                     <img src="photo/0-9.jpg" style="width:100%">
+                   </div>
+                   <div class="column">
+                     <img src="photo/0-16.jpg" style="width:100%">
+                     <img src="photo/0-14.jpg" style="width:100%">
+                     <img src="photo/0-13.jpg" style="width:100%">
+                     <img src="photo/0-12.jpg" style="width:100%">
+                     <img src="photo/0-15.jpg" style="width:100%">
+                   </div>
+                 </div>
+             </div>
+             <div class="panel panel-default">
+               <div class="panel-heading">
+                 <h4 class="panel-title">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+                 </h4>
+               </div>
+               <div id="collapse2" class="panel-collapse collapse">
+                 <!-- Photo Grid -->
+                 <div class="row">
+                   <div class="column">
+                     <img src="photo/0-1.jpg" style="width:100%">
+                     <img src="photo/0-2.jpg" style="width:100%">
+                     <img src="photo/0-3.jpg" style="width:100%">
+                     <img src="photo/0-4.jpg" style="width:100%">
+                     <img src="photo/0-5.jpg" style="width:100%">
+                   </div>
+                   <div class="column">
+                     <img src="photo/0-6.jpg" style="width:100%">
+                     <img src="photo/0-7.jpg" style="width:100%">
+                     <img src="photo/0-8.jpg" style="width:100%">
+                     <img src="photo/0-9.jpg" style="width:100%">
+                     <img src="photo/0-10.jpg" style="width:100%">
+                     <img src="photo/0-11.jpg" style="width:100%">
+                     <img src="photo/0-17.jpg" style="width:100%">
+                   </div>
+                   <div class="column">
+                     <img src="photo/0-12.jpg" style="width:100%">
+                     <img src="photo/0-13.jpg" style="width:100%">
+                     <img src="photo/0-14.jpg" style="width:100%">
+                     <img src="photo/0-15.jpg" style="width:100%">
+                     <img src="photo/0-16.jpg" style="width:100%">
+                   </div>
+                 </div>
+             </div>
+             <div class="panel panel-default">
+               <div class="panel-heading">
+                 <h4 class="panel-title">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+                 </h4>
+               </div>
+               <div id="collapse3" class="panel-collapse collapse">
+                 <!-- Photo Grid -->
+                 <div class="row">
+                   <div class="column">
+                     <img src="photo/0-2.jpg" style="width:100%">
+                     <img src="photo/0-5.jpg" style="width:100%">
+                     <img src="photo/0-4.jpg" style="width:100%">
+                     <img src="photo/0-3.jpg" style="width:100%">
+                     <img src="photo/0-1.jpg" style="width:100%">
+                   </div>
+                   <div class="column">
+                     <img src="photo/0-9.jpg" style="width:100%">
+                     <img src="photo/0-6.jpg" style="width:100%">
+                     <img src="photo/0-17.jpg" style="width:100%">
+                     <img src="photo/0-8.jpg" style="width:100%">
+                     <img src="photo/0-10.jpg" style="width:100%">
+                     <img src="photo/0-11.jpg" style="width:100%">
+                     <img src="photo/0-7.jpg" style="width:100%">
+                   </div>
+                   <div class="column">
+                     <img src="photo/0-15.jpg" style="width:100%">
+                     <img src="photo/0-16.jpg" style="width:100%">
+                     <img src="photo/0-14.jpg" style="width:100%">
+                     <img src="photo/0-s13.jpg" style="width:100%">
+                     <img src="photo/0-12.jpg" style="width:100%">
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+
+
+
     </div>
 
   </body>
