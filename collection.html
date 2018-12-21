@@ -103,6 +103,40 @@
         font-size: 24px;
         margin: 0px;
       }
+
+
+
+      body {
+        margin: 0;
+        font-family: Arial;
+      }
+
+      .header {
+        text-align: center;
+        padding: 32px;
+      }
+      .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+
+      .column {
+        -ms-flex: 25%;
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+        height: 210px;
+      }
+
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        size: cover;
+        repeat: no-repeat;
+      }
     </style>
   </head>
   <body>
@@ -125,13 +159,130 @@
 
         </div>
       </div>
-    </div>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">메뉴 이동
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="photo.html">TAKE PHOTO</a></li>
+            <li><a href="closet.html">MY CLOSET</a></li>
+            <li><a href="blogger.html">BLOGGER CODI</a></li>
+          </ul>
 
+      </div>
+    </div>
 
         <div class="">
           <h1>My Collection</h1>
         </div>
 
+<p></p>
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active">
+            <a href="#">Home
+              <div class="row">
+                <div class="column">
+                  <img src="photo/0-7.jpg" style="width:100%">
+                  <img src="photo/0-8.jpg" style="width:100%">
+                  <img src="photo/0-17.jpg" style="width:100%">
+                  <img src="photo/0-9.jpg" style="width:100%">
+                  <img src="photo/0-10.jpg" style="width:100%">
+                  <img src="photo/0-6.jpg" style="width:100%">
+                  <img src="photo/0-11.jpg" style="width:100%">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li role="presentation"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+<p></p>
+
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+            </h4>
+          </div>
+<!--          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="row">
+              <div class="column">
+                <img src="photo/0-2.jpg" style="width:100%">
+                <img src="photo/0-4.jpg" style="width:100%">
+                <img src="photo/0-3.jpg" style="width:100%">
+                <img src="photo/0-1.jpg" style="width:100%">
+                <img src="photo/0-5.jpg" style="width:100%">
+              </div>
+              <div class="column">
+                <img src="photo/0-7.jpg" style="width:100%">
+                <img src="photo/0-8.jpg" style="width:100%">
+                <img src="photo/0-17.jpg" style="width:100%">
+                <img src="photo/0-9.jpg" style="width:100%">
+                <img src="photo/0-10.jpg" style="width:100%">
+                <img src="photo/0-6.jpg" style="width:100%">
+                <img src="photo/0-11.jpg" style="width:100%">
+              </div>
+            </div>
+         </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="row">
+
+              <div class="column">
+                <img src="photo/0-2.jpg" style="width:100%">
+                <img src="photo/0-1.jpg" style="width:100%">
+                <img src="photo/0-3.jpg" style="width:100%">
+                <img src="photo/0-5.jpg" style="width:100%">
+                <img src="photo/0-4.jpg" style="width:100%">
+              </div>
+              <div class="column">
+                <img src="photo/0-7.jpg" style="width:100%">
+                <img src="photo/0-6.jpg" style="width:100%">
+                <img src="photo/0-8.jpg" style="width:100%">
+                <img src="photo/0-11.jpg" style="width:100%">
+                <img src="photo/0-9.jpg" style="width:100%">
+                <img src="photo/0-10.jpg" style="width:100%">
+                <img src="photo/0-17.jpg" style="width:100%">
+              </div>
+            </div>
+
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="row">
+              <div class="column">
+                <img src="photo/0-8.jpg" style="width:100%">
+                <img src="photo/0-3.jpg" style="width:100%">
+                <img src="photo/0-6.jpg" style="width:100%">
+                <img src="photo/0-10.jpg" style="width:100%">
+                <img src="photo/0-5.jpg" style="width:100%">
+                <img src="photo/0-11.jpg" style="width:100%">
+                <img src="photo/0-9.jpg" style="width:100%">
+              </div>
+              <div class="column">
+                <img src="photo/0-1.jpg" style="width:100%">
+                <img src="photo/0-4.jpg" style="width:100%">
+                <img src="photo/0-2.jpg" style="width:100%">
+                <img src="photo/0-17.jpg" style="width:100%">
+                <img src="photo/0-7.jpg" style="width:100%">
+              </div>
+            </div>
+
+        </div> -->
+      </div>
+
+     </div>
     </div>
   </body>
 </html>

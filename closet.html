@@ -247,81 +247,155 @@
     </style>
   </head>
   <body>
-  <div >
-    <div class="col-xs-">
-      <div class="container d-flex justify-content-center">
-        <div class="col-xs-8">
-          <a href="main.html">
-            <img alt="메인화면" src="logo4.png" width="80%">
-          </a>
+    <div >
+      <div class="col-xs-">
+        <div class="container d-flex justify-content-center">
+          <div class="col-xs-8">
+            <a href="main.html">
+              <img alt="메인화면" src="logo4.png" width="80%">
+            </a>
+          </div>
+          <div class="col-xs-4">
+            <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
+
+            <script>
+            function newDoc() {
+              window.location.assign("mypage.html")
+            }
+            </script>
+
+          </div>
         </div>
-        <div class="col-xs-4">
-          <input class="btn btn-secondary pull-right" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
-
-          <script>
-          function newDoc() {
-            window.location.assign("mypage.html")
-          }
-          </script>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">메뉴 이동
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="photo.html">TAKE PHOTO</a></li>
+              <li><a href="blogger.html">BLOGGER CODI</a></li>
+              <li><a href="collection.html">MY COLLECTION</a></li>
+            </ul>
 
         </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Pages
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">TAKE PHOTO</a></li>
-            <li><a href="#">BLOGGER CODI</a></li>
-            <li><a href="#">MY COLLECTION</a></li>
-          </ul>
-
       </div>
 
     </div>
-      <div class="header" id = "myHeader">
-        <h1>Image Grid</h1>
-        <p>Click on the buttons to change the grid view.</p>
-      </div>
-      <div>
-        <!-- Photo Grid -->
-        <div class="row">
-          <div class="column">
-            <img src="photo/0-1.jpg" style="width:100%">
-            <img src="photo/0-2.jpg" style="width:100%">
-            <img src="photo/0-3.jpg" style="width:100%">
-            <img src="photo/0-4.jpg" style="width:100%">
-            <img src="photo/0-5.jpg" style="width:100%">
+
+    <div class="container">
+      <h2>내 옷장 - My Closet</h2>
+      <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+            </h4>
           </div>
-          <div class="column">
-            <img src="photo/0-6.jpg" style="width:100%">
-            <img src="photo/0-7.jpg" style="width:100%">
-            <img src="photo/0-8.jpg" style="width:100%">
-            <img src="photo/0-9.jpg" style="width:100%">
-            <img src="photo/0-10.jpg" style="width:100%">
-            <img src="photo/0-11.jpg" style="width:100%">
-            <img src="photo/0-17.jpg" style="width:100%">
-          </div>
-          <div class="column">
-            <img src="photo/0-1.jpg" style="width:100%">
-            <img src="photo/0-2.jpg" style="width:100%">
-            <img src="photo/0-3.jpg" style="width:100%">
-            <img src="photo/0-4.jpg" style="width:100%">
-            <img src="photo/0-5.jpg" style="width:100%">
-          </div>
-          <div class="column">
-            <img src="photo/0-6.jpg" style="width:100%">
-            <img src="photo/0-7.jpg" style="width:100%">
-            <img src="photo/0-8.jpg" style="width:100%">
-            <img src="photo/0-9.jpg" style="width:100%">
-            <img src="photo/0-10.jpg" style="width:100%">
-            <img src="photo/0-11.jpg" style="width:100%">
-            <img src="photo/0-17.jpg" style="width:100%">
+          <div id="collapse1" class="panel-collapse collapse in">
+            <!-- Photo Grid -->
+            <div class="row">
+              <div class="column">
+                <img src="photo/0-5.jpg" style="width:100%">
+                <img src="photo/0-2.jpg" style="width:100%">
+                <img src="photo/0-4.jpg" style="width:100%">
+                <img src="photo/0-1.jpg" style="width:100%">
+                <img src="photo/0-3.jpg" style="width:100%">
+              </div>
+              <div class="column">
+                <img src="photo/0-17.jpg" style="width:100%">
+                <img src="photo/0-11.jpg" style="width:100%">
+                <img src="photo/0-8.jpg" style="width:100%">
+                <img src="photo/0-7.jpg" style="width:100%">
+                <img src="photo/0-10.jpg" style="width:100%">
+                <img src="photo/0-6.jpg" style="width:100%">
+                <img src="photo/0-9.jpg" style="width:100%">
+              </div>
+              <div class="column">
+                <img src="photo/0-16.jpg" style="width:100%">
+                <img src="photo/0-14.jpg" style="width:100%">
+                <img src="photo/0-13.jpg" style="width:100%">
+                <img src="photo/0-12.jpg" style="width:100%">
+                <img src="photo/0-15.jpg" style="width:100%">
+              </div>
+            </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+                </h4>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse">
+                <!-- Photo Grid -->
+                <div class="row">
+                  <div class="column">
+                    <img src="photo/0-1.jpg" style="width:100%">
+                    <img src="photo/0-2.jpg" style="width:100%">
+                    <img src="photo/0-3.jpg" style="width:100%">
+                    <img src="photo/0-4.jpg" style="width:100%">
+                    <img src="photo/0-5.jpg" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="photo/0-6.jpg" style="width:100%">
+                    <img src="photo/0-7.jpg" style="width:100%">
+                    <img src="photo/0-8.jpg" style="width:100%">
+                    <img src="photo/0-9.jpg" style="width:100%">
+                    <img src="photo/0-10.jpg" style="width:100%">
+                    <img src="photo/0-11.jpg" style="width:100%">
+                    <img src="photo/0-17.jpg" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="photo/0-12.jpg" style="width:100%">
+                    <img src="photo/0-13.jpg" style="width:100%">
+                    <img src="photo/0-14.jpg" style="width:100%">
+                    <img src="photo/0-15.jpg" style="width:100%">
+                    <img src="photo/0-16.jpg" style="width:100%">
+                  </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+                </h4>
+              </div>
+              <div id="collapse3" class="panel-collapse collapse">
+                <!-- Photo Grid -->
+                <div class="row">
+                  <div class="column">
+                    <img src="photo/0-2.jpg" style="width:100%">
+                    <img src="photo/0-5.jpg" style="width:100%">
+                    <img src="photo/0-4.jpg" style="width:100%">
+                    <img src="photo/0-3.jpg" style="width:100%">
+                    <img src="photo/0-1.jpg" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="photo/0-9.jpg" style="width:100%">
+                    <img src="photo/0-6.jpg" style="width:100%">
+                    <img src="photo/0-17.jpg" style="width:100%">
+                    <img src="photo/0-8.jpg" style="width:100%">
+                    <img src="photo/0-10.jpg" style="width:100%">
+                    <img src="photo/0-11.jpg" style="width:100%">
+                    <img src="photo/0-7.jpg" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="photo/0-15.jpg" style="width:100%">
+                    <img src="photo/0-16.jpg" style="width:100%">
+                    <img src="photo/0-14.jpg" style="width:100%">
+                    <img src="photo/0-s13.jpg" style="width:100%">
+                    <img src="photo/0-12.jpg" style="width:100%">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+      </div>
 
-     </div>
+
+
     </div>
+
+
   </body>
 </html>
