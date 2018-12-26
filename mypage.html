@@ -102,6 +102,111 @@
         font-size: 24px;
         margin: 0px;
       }
+
+
+      // Have a rule differ in different sizes
+      @mixin responsive-property( $rule, $sizes... ) {
+      	@each $size in $sizes {
+      		$i: index( $sizes, $size );
+      		@if $size == nth( $sizes, 1 ) {
+      			#{$rule}: $size;
+      		} @else {
+      			@include media-breakpoint-up( nth( map-keys( $grid-breakpoints ), $i ) ) {
+      				#{$rule}: $size;
+      			};
+      		}
+      	}
+      }
+
+      // Same as adding a 'container' class in non-sass Bootstrap
+      @mixin make-cont() {
+      	@include make-container();
+      	@include make-container-max-widths();
+      }
+
+      // One mixin to rule all col makings
+      @mixin make-cols( $cols... ) {
+      	@include make-col-ready();
+      	@for $i from 1 through length( $grid-breakpoints ) {
+      		@if length( $cols ) >= $i {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, $i ) );
+      			}
+      		} @else {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, length( $cols ) ) );
+      			}
+      		}
+      	}
+      }
+
+      // One mixin to rule all col offsets
+      @mixin make-col-offsets( $cols... ) {
+      	@for $i from 1 through length( $grid-breakpoints ) {
+      		@if length( $cols ) >= $i {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				margin-left: percentage( nth( $cols, $i ) / $grid-columns );
+      			}
+      		} @else {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				margin-left: percentage( nth( $cols, length( $cols ) ) / $grid-columns );
+      			}
+      		}
+      	}
+      }
+
+      // Making cols centered
+      @mixin make-centered-cols( $cols... ) {
+      	@for $i from 1 through length( $grid-breakpoints ) {
+      		@if length( $cols ) >= $i {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, $i ) );
+      				@include make-col-offset( ( 12 - nth( $cols, $i ) ) / 2 );
+      			}
+      		} @else {
+      			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
+      				@include make-col( nth( $cols, length( $cols ) ) );
+      				@include make-col-offset( ( 12 - nth( $cols, length( $cols ) ) ) / 2 );
+      			}
+      		}
+      	}
+      }
+
+      // The rest
+      @mixin make-col-xs( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, xs )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-sm( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, sm )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-md( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, md )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-lg( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, lg )}) {
+      		@include make-col( $cols );
+      	}
+      }
+
+      @mixin make-col-xl( $cols ) {
+      	@include make-col-ready();
+      	@media (min-width: #{map-get( $grid-breakpoints, xl )}) {
+      		@include make-col( $cols );
+      	}
+      }
     </style>
   </head>
 
@@ -120,38 +225,51 @@
             <a>
               <h1>My Page</h1>
             </a>
-         </div>
-         <div class="container">
-           <table class="table table-sm table-dark">
-             <thead>
-               <tr>
-                 <th scope="col">#</th>
-                 <th scope="col">First</th>
-                 <th scope="col">Last</th>
-                 <th scope="col">Handle</th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr>
-                 <th scope="row">1</th>
-                 <td>Mark</td>
-                 <td>Otto</td>
-                 <td>@mdo</td>
-               </tr>
-               <tr>
-                 <th scope="row">2</th>
-                 <td>Jacob</td>
-                 <td>Thornton</td>
-                 <td>@fat</td>
-               </tr>
-               <tr>
-                 <th scope="row">3</th>
-                 <td colspan="2">Larry the Bird</td>
-                 <td>@twitter</td>
-               </tr>
-             </tbody>
-           </table>
-         </div>
+            <img src="photo/0-23.jpg" width="200px">
+           </div>
+           <div class="container">
+             <table class="table table-xs table-dark">
+               <thead>
+                 <tr>
+                   <th scope="col">#</th>
+                   <th scope="col">ID</th>
+                   <th scope="col">Name</th>
+                   <th scope="col">e-mail</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <th scope="row">1</th>
+                   <td>Mark</td>
+                   <td>Otto</td>
+                   <td>@mdo</td>
+                 </tr>
+                 <tr>
+                   <th scope="row">2</th>
+                   <td>Donsdons</td>
+                   <td>항돈</td>
+                   <td>@dododo</td>
+                 </tr>
+
+               </tbody>
+               <thead>
+                 <tr>
+                   <th scope="col">#</th>
+                   <th scope="col">like-site</th>
+                   <th scope="col">memo</th>
+                   <th scope="col">e-mail</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <th scope="row">1</th>
+                   <td>Mark</td>
+                   <td>Otto</td>
+                   <td>@mdo</td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
 
         </div>
       </div>
