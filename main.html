@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
       $grid-columns:      12;
       $grid-gutter-width: 30px;
 
@@ -33,9 +33,8 @@
 
       $grid-columns: 12 !default;
       $grid-gutter-width: 30px !default;
-
-
     </script>
+    -->
 
     <style media="screen">
       div.main1, #explain {
@@ -48,7 +47,7 @@
         font : 5vw gothic black;
         line-height:1.6;
       }
-      .col-xs-6, .container{
+      .col-xs-4, .container{
         padding:0px;
         width: cover;
         @include make-col-ready();
@@ -61,7 +60,7 @@
         }
 
       .container d-flex justify-content-around{
-        margin: 0px;
+        width: auto;
 
       }
       .container {
@@ -131,29 +130,35 @@
       </br>
 
         <div class="d-flex justify-content-center">
-          <div class="col-xs-6">
-            <div id="box1"><a href="photo.html">
-              <div class="main1">촬영</br>take photo</div></a>
-            </div>
-            <div id="box2"><a href="closet.html">
-              <div class="main1">옷장</br>my closet</div></a>
-            </div>
-          </div>
-          <div class="col-xs-6">
+          <div class="col-xs-4">
             <div id="box3"><a href="blogger.html">
               <div class="main1">블로거코디</br>blogger codi</div></a>
             </div>
+          </div>
+          <div class="col-xs-4">
             <div id="box4"><a href="collection.html">
               <div class="main1">옷장코디</br>my collection</div></a>
             </div>
           </div>
+          </div>
+          <div class="col-xs-4">
+            <div id="box2"><a href="closet.html">
+              <div class="main1">옷장</br>my closet</div></a>
+            </div>
+            <!--            <div id="box1"><a href="photo.html">
+            <div class="main1">촬영</br>take photo</div></a>
+          </div> -->
+          </div>
+        </div>
 
+        <div class="col-xs">
+          <div class="container-center">
+            <p id="explain">
+              Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
+            </p>
+          </div>
         </div>
-        <div class="container-center">
-          <p id="explain">
-            Hipcloset is a fashion codi-helper who has a closet or many. It is that the webpage helps you have a nice codi from fashion pictures matching your clothes on the web. You can easily match your clothes with fashion pictures. I hope you have a good experience with this Hipcloset. Thank you!
-          </p>
-        </div>
+
         <br/>
       </div>
 
