@@ -8,6 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
     <script type="text/javascript">
       $grid-columns:      12;
       $grid-gutter-width: 30px;
@@ -38,108 +40,63 @@
 
     </script>
 
-    <style media="screen">
-      div.main1, #explain{
-        background: rgb(255, 255, 255) transparent;
-        background: rgb(255, 255, 255, 0.6);
-        filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-        -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-        padding:0.5% 0 1% 0;
-        height:cover;
-        font : 5vw Futura black;
-        line-height:1.6;
-        text-decoration:none;
-      }
-      .col-xs-6, .container{
-        padding:0px;
-        width: cover;
-        @include make-col-ready();
-        @include media-breakpoint-up(xs) {
-            @include make-col(6);
+    <script>
+      var dragged;
+
+      /* events fired on the draggable target */
+      document.addEventListener("drag", function( event ) {
+
+      }, false);
+
+      document.addEventListener("dragstart", function( event ) {
+          // store a ref. on the dragged elem
+          dragged = event.target;
+          // make it half transparent
+          event.target.style.opacity = .5;
+      }, false);
+
+      document.addEventListener("dragend", function( event ) {
+          // reset the transparency
+          event.target.style.opacity = "";
+      }, false);
+
+      /* events fired on the drop targets */
+      document.addEventListener("dragover", function( event ) {
+          // prevent default to allow drop
+          event.preventDefault();
+      }, false);
+
+      document.addEventListener("dragenter", function( event ) {
+          // highlight potential drop target when the draggable element enters it
+          if ( event.target.className == "dropzone" ) {
+              event.target.style.background = "purple";
           }
-            @include media-breakpoint-up(lg) {
-              @include make-col(4);
-            }
-        }
 
-      .container d-flex justify-content-around{
-        margin: 0px;
+      }, false);
 
-      }
-      .container {
-        margin:10px;
-      }
-      .main1 {
-        height: auto;
+      document.addEventListener("dragleave", function( event ) {
+          // reset background of potential drop target when the draggable element leaves it
+          if ( event.target.className == "dropzone" ) {
+              event.target.style.background = "";
+          }
 
-      }
-      #back {
-        background-image: url("back.jpg");
-      }
-      #mypage{
-        font-size: 15px;
-      }
-      #box1,#box2,#box3,#box4{
-        width: cover;
-        height: auto;
-        padding:100px 30px 100px 30px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      #box1{
-        background-image: url("1.jpg");
-      }
-      #box2{
-        background-image: url("2.jpg");
-      }
-      #box3{
-        background-image: url("3.jpg");
-      }
-      #box4{
-        background-image: url("4.jpg");
-      }
-      #explain {
-        font-size: 24px;
-        margin: 0px;
-      }
+      }, false);
 
+      document.addEventListener("drop", function( event ) {
+          // prevent default action (open as link for some elements)
+          event.preventDefault();
+          // move dragged elem to the selected drop target
+          if ( event.target.className == "dropzone" ) {
+              event.target.style.background = "";
+              dragged.parentNode.removeChild( dragged );
+              event.target.appendChild( dragged );
+          }
 
+      }, false);
+    </script>
 
-      body {
-        margin: 0;
-        font-family: Arial;
-      }
+  <link rel="stylesheet" href="style.css">
 
-      .header {
-        text-align: center;
-        padding: 32px;
-      }
-      .row {
-        display: -ms-flexbox; /* IE10 */
-        display: flex;
-        -ms-flex-wrap: wrap; /* IE10 */
-        flex-wrap: wrap;
-        padding: 0 4px;
-      }
-
-      .column {
-        -ms-flex: 25%;
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 4px;
-        height: 210px;
-      }
-
-      .column img {
-        margin-top: 8px;
-        vertical-align: middle;
-        size: cover;
-        repeat: no-repeat;
-      }
-
-
-    </style>
   </head>
   <body>
   <div >
@@ -166,8 +123,8 @@
           <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <!--<li><a href="photo.html">TAKE PHOTO</a></li> -->
-            <li><a href="closet.html">MY CLOSET</a></li>
             <li><a href="blogger.html">BLOGGER CODI</a></li>
+            <li><a href="closet.html">MY CLOSET</a></li>
           </ul>
 
       </div>
@@ -176,14 +133,24 @@
         <div class="">
           <h1>My Collection</h1>
         </div>
-
-<p></p>
-
+        <div class="dropzone">
+          <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+            This div is draggable <p></p>
+            <div id="moving"><a href="collection.html">
+              <div class="main1">옷장코디</br>my collection</div></a>
+            </div>
+          </div>
+        </div>
+        <div class="dropzone"></div>
+        <div class="dropzone"></div>
+        <div class="dropzone"></div>
+      <p></p>
+      <h2>내 옷장 리스트</h2>
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">옷장 1</a>
             </h4>
           </div>
           <div id="collapse1" class="panel-collapse collapse in">
@@ -208,7 +175,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">옷장 2</a>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
@@ -234,7 +201,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">옷장 3</a>
             </h4>
           </div>
           <div id="collapse3" class="panel-collapse collapse">

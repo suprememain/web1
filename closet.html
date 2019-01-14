@@ -38,6 +38,7 @@
 
     </script>
 
+    <link rel="stylesheet" href="style.css">
     <style media="screen">
 
           // Have a rule differ in different sizes
@@ -146,104 +147,6 @@
 
 
 
-      div.main1, #explain{
-        background: rgb(255, 255, 255) transparent;
-        background: rgb(255, 255, 255, 0.6);
-        filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-        -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-        padding:0.5% 0 1% 0;
-        height:cover;
-        font : 5vw Futura black;
-        line-height:1.6;
-        text-decoration:none;
-      }
-      .col-xs-6, .container{
-        padding:0px;
-        width: cover;
-        @include make-col-ready();
-        @include media-breakpoint-up(xs) {
-            @include make-col(6);
-          }
-            @include media-breakpoint-up(lg) {
-              @include make-col(4);
-            }
-        }
-
-      .container d-flex justify-content-around{
-        margin: 0px;
-
-      }
-      .container {
-        margin:10px;
-      }
-      .main1 {
-        height: auto;
-
-      }
-      #back {
-        background-image: url("back.jpg");
-      }
-      #mypage{
-        font-size: 15px;
-      }
-      #box1,#box2,#box3,#box4{
-        width: cover;
-        height: auto;
-        padding:100px 30px 100px 30px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      #box1{
-        background-image: url("1.jpg");
-      }
-      #box2{
-        background-image: url("2.jpg");
-      }
-      #box3{
-        background-image: url("3.jpg");
-      }
-      #box4{
-        background-image: url("4.jpg");
-      }
-      #explain {
-        font-size: 24px;
-        margin: 0px;
-      }
-
-
-
-      body {
-        margin: 0;
-        font-family: Arial;
-      }
-
-      .header {
-        text-align: center;
-        padding: 32px;
-      }
-      .row {
-        display: -ms-flexbox; /* IE10 */
-        display: flex;
-        -ms-flex-wrap: wrap; /* IE10 */
-        flex-wrap: wrap;
-        padding: 0 4px;
-      }
-
-      .column1 {
-        -ms-flex: 25%;
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 4px;
-        height: 210px;
-      }
-
-      .column1 img {
-        margin-top: 8px;
-        vertical-align: middle;
-        size: cover;
-        repeat: no-repeat;
-      }
     </style>
   </head>
   <body>
@@ -252,7 +155,7 @@
         <div class="container d-flex justify-content-center">
           <div class="col-xs-8">
             <a href="main.html">
-              <img alt="메인화면" src="logo.png" width="80%">
+              <img alt="메인화면" src="logo4.png" width="80%">
             </a>
           </div>
           <div class="col-xs-4">

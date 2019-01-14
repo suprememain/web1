@@ -7,102 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-      $grid-columns:      12;
-      $grid-gutter-width: 30px;
+    <script type="text/javascript"></script>
 
-      $grid-breakpoints: (
-      // Extra small screen / phone
-      xs: 0,
-      // Small screen / phone
-      sm: 576px,
-      // Medium screen / tablet
-      md: 768px,
-      // Large screen / desktop
-      lg: 992px,
-      // Extra large screen / wide desktop
-      xl: 1200px
-      );
-
-      $container-max-widths: (
-      sm: 540px,
-      md: 720px,
-      lg: 960px,
-      xl: 1140px
-      );
-
-      $grid-columns: 12 !default;
-      $grid-gutter-width: 30px !default;
-
-
-    </script>
 
     <style media="screen">
-      div.main1, #explain{
-        background: rgb(255, 255, 255) transparent;
-        background: rgb(255, 255, 255, 0.6);
-        filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-        -ms-filter:"progid:DXImageTransfrom.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-        padding:0.5% 0 1% 0;
-        height:cover;
-        font : 5vw Futura black;
-        line-height:1.6;
-        text-decoration:none;
-      }
-      .col-xs-6, .container{
-        padding:0px;
-        width: cover;
-        @include make-col-ready();
-        @include media-breakpoint-up(xs) {
-            @include make-col(6);
-          }
-            @include media-breakpoint-up(lg) {
-              @include make-col(4);
-            }
-        }
-
-      .container d-flex justify-content-around{
-        margin: 0px;
-
-      }
-      .container {
-        margin:10px;
-      }
-      .main1 {
-        height: auto;
-
-      }
-      #back {
-        background-image: url("back.jpg");
-      }
-      #mypage{
-        font-size: 15px;
-      }
-      #box1,#box2,#box3,#box4{
-        width: cover;
-        height: auto;
-        padding:100px 30px 100px 30px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      #box1{
-        background-image: url("1.jpg");
-      }
-      #box2{
-        background-image: url("2.jpg");
-      }
-      #box3{
-        background-image: url("3.jpg");
-      }
-      #box4{
-        background-image: url("4.jpg");
-      }
-      #explain {
-        font-size: 24px;
-        margin: 0px;
-      }
-
 
       // Have a rule differ in different sizes
       @mixin responsive-property( $rule, $sizes... ) {
@@ -208,6 +116,9 @@
       	}
       }
     </style>
+
+    <link rel="stylesheet" href="style.css">
+
   </head>
 
   <body>
