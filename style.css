@@ -1,5 +1,5 @@
 
-
+/* main화면 */
       div.main1, #explain{
         background: rgb(255, 255, 255) transparent;
         background: rgb(255, 255, 255, 0.6);
@@ -31,7 +31,7 @@
         margin:10px;
       }
       .main1 {
-        height: auto;
+        height: 300px;
 
       }
       #back {
@@ -42,7 +42,7 @@
       }
       #box1,#box2,#box3,#box4{
         width: 100%;
-        height: auto;
+        height: cover;
         padding:100px 30px 100px 30px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -62,7 +62,7 @@
       }
       #explain {
         font-size: 24px;
-        margin: 0px;
+        /* margin: 0px; */
       }
 
 
@@ -115,7 +115,7 @@
 
 
 
-
+/* 드래그 */
       #moving, #draggable,.dropzone  {
         width: cover;
         /* height: auto; */
