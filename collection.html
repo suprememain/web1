@@ -10,35 +10,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 
-    <script type="text/javascript">
-      $grid-columns:      12;
-      $grid-gutter-width: 30px;
-
-      $grid-breakpoints: (
-      // Extra small screen / phone
-      xs: 0,
-      // Small screen / phone
-      sm: 576px,
-      // Medium screen / tablet
-      md: 768px,
-      // Large screen / desktop
-      lg: 992px,
-      // Extra large screen / wide desktop
-      xl: 1200px
-      );
-
-      $container-max-widths: (
-      sm: 540px,
-      md: 720px,
-      lg: 960px,
-      xl: 1140px
-      );
-
-      $grid-columns: 12 !default;
-      $grid-gutter-width: 30px !default;
-
-
-    </script>
 
     <script>
       var dragged;
@@ -108,7 +79,7 @@
           </a>
         </div>
         <div class="col-xs-4">
-          <input class="btn btn-secondary pull-right form-control btn-lg" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
+          <input class="btn btn-secondary pull-right form-control btn-lg" id="mypage" type="button" value="my page" onclick="newDoc()"  width="10%">
           <script>
           function newDoc() {
             window.location.assign("mypage.html")
@@ -132,17 +103,6 @@
         <div class="">
           <h1>My Collection</h1>
         </div>
-        <div class="dropzone">
-          <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
-            This div is draggable <p></p>
-            <div id="moving"><a href="collection.html">
-              <div class="main1">옷장코디</br>my collection</div></a>
-            </div>
-          </div>
-        </div>
-        <div class="dropzone"></div>
-        <div class="dropzone"></div>
-        <div class="dropzone"></div>
       <p></p>
       <h2>내 옷장 리스트</h2>
       <div class="panel-group" id="accordion">

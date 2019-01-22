@@ -117,8 +117,7 @@
 
 /* 드래그 */
       #moving, #draggable,.dropzone  {
-        width: cover;
-        height: auto;
+        height: 250px;
         /* padding:150px 30px 150px 30px; */
         background-size: cover;
         background-repeat: no-repeat;
@@ -126,17 +125,18 @@
       }
       #moving  {
         background-image: url("logo2.png");
+        width: cover;
       }
       #draggable {
         width: cover;
-        height: 270px;
+        height: 250px;
         text-align: center;
         background: white;
       }
 
       .dropzone {
         width: cover;
-        height: 290px;
+        height: 310px;
         background: blueviolet;
         margin-bottom: 10px;
         padding: 10px;
@@ -193,3 +193,8 @@
         float: right;
         padding-top: 16px;
       }
+
+
+      /*  font */
+      a, button, input{
+        font-size: 3vw;

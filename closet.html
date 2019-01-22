@@ -39,115 +39,7 @@
     </script>
 
     <link rel="stylesheet" href="style.css">
-    <style media="screen">
 
-          // Have a rule differ in different sizes
-          @mixin responsive-property( $rule, $sizes... ) {
-          	@each $size in $sizes {
-          		$i: index( $sizes, $size );
-          		@if $size == nth( $sizes, 1 ) {
-          			#{$rule}: $size;
-          		} @else {
-          			@include media-breakpoint-up( nth( map-keys( $grid-breakpoints ), $i ) ) {
-          				#{$rule}: $size;
-          			};
-          		}
-          	}
-          }
-
-          // Same as adding a 'container' class in non-sass Bootstrap
-          @mixin make-cont() {
-          	@include make-container();
-          	@include make-container-max-widths();
-          }
-
-          // One mixin to rule all col makings
-          @mixin make-cols( $cols... ) {
-          	@include make-col-ready();
-          	@for $i from 1 through length( $grid-breakpoints ) {
-          		@if length( $cols ) >= $i {
-          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-          				@include make-col( nth( $cols, $i ) );
-          			}
-          		} @else {
-          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-          				@include make-col( nth( $cols, length( $cols ) ) );
-          			}
-          		}
-          	}
-          }
-
-          // One mixin to rule all col offsets
-          @mixin make-col-offsets( $cols... ) {
-          	@for $i from 1 through length( $grid-breakpoints ) {
-          		@if length( $cols ) >= $i {
-          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-          				margin-left: percentage( nth( $cols, $i ) / $grid-columns );
-          			}
-          		} @else {
-          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-          				margin-left: percentage( nth( $cols, length( $cols ) ) / $grid-columns );
-          			}
-          		}
-          	}
-          }
-
-          // Making cols centered
-          @mixin make-centered-cols( $cols... ) {
-          	@for $i from 1 through length( $grid-breakpoints ) {
-          		@if length( $cols ) >= $i {
-          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-          				@include make-col( nth( $cols, $i ) );
-          				@include make-col-offset( ( 12 - nth( $cols, $i ) ) / 2 );
-          			}
-          		} @else {
-          			@media ( min-width: #{map-get( $grid-breakpoints, nth( map-keys( $grid-breakpoints ), $i ) )} ) {
-          				@include make-col( nth( $cols, length( $cols ) ) );
-          				@include make-col-offset( ( 12 - nth( $cols, length( $cols ) ) ) / 2 );
-          			}
-          		}
-          	}
-          }
-
-          // The rest
-          @mixin make-col-xs( $cols ) {
-          	@include make-col-ready();
-          	@media (min-width: #{map-get( $grid-breakpoints, xs )}) {
-          		@include make-col( $cols );
-          	}
-          }
-
-          @mixin make-col-sm( $cols ) {
-          	@include make-col-ready();
-          	@media (min-width: #{map-get( $grid-breakpoints, sm )}) {
-          		@include make-col( $cols );
-          	}
-          }
-
-          @mixin make-col-md( $cols ) {
-          	@include make-col-ready();
-          	@media (min-width: #{map-get( $grid-breakpoints, md )}) {
-          		@include make-col( $cols );
-          	}
-          }
-
-          @mixin make-col-lg( $cols ) {
-          	@include make-col-ready();
-          	@media (min-width: #{map-get( $grid-breakpoints, lg )}) {
-          		@include make-col( $cols );
-          	}
-          }
-
-          @mixin make-col-xl( $cols ) {
-          	@include make-col-ready();
-          	@media (min-width: #{map-get( $grid-breakpoints, xl )}) {
-          		@include make-col( $cols );
-          	}
-          }
-
-
-
-    </style>
   </head>
   <body>
     <div >
@@ -159,7 +51,7 @@
             </a>
           </div>
           <div class="col-xs-4">
-            <input class="btn btn-secondary pull-right form-control btn-lg" id="mypage" type="button" value="mypage" onclick="newDoc()"  width="10%">
+            <input class="btn btn-secondary pull-right form-control btn-lg" id="mypage" type="button" value="my page" onclick="newDoc()"  width="10%">
 
             <script>
             function newDoc() {
@@ -188,142 +80,69 @@
       <h2>내 옷장 - My Closet</h2>
       <p><strong>Note:</strong> 내 옷장에 있는 옷들을 조회하기 </p>
 
+      <h3>옷 선택</h3>
+      <div>
+        <span class="dropdown">
+          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">종류
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">상의</a></li>
+              <li><a href="#">하의</a></li>
+              <li><a href="#">신발</a></li>
+              <li><a href="#">악세사리</a></li>
+            </ul>
+          </span>
+          <span class="dropdown">
+            <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">색상
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">흰색</a></li>
+                <li><a href="#">검정</a></li>
+                <li><a href="#">파랑</a></li>
+              </ul>
+            </span>
+            <button class="btn btn-primary btn-lg" type="button">선택</button>
+          </div>
+
+          <p>선택결과</p>
+          <input></input>
+
+
+      <input type="text" id="myInput">
+      <button type="button" name="button" onclick="myFunction()">눌러주세요</button>
+      <p id="demo"></p>
+
+      <script>
+      function myFunction() {
+        var text;
+        var pants = document.getElementById("myInput").value;
+
+        switch(pants) {
+          case "흰색":
+           text="흰색";
+          break;
+          case "검정":
+          text= "검정";
+          break;
+          case "파랑":
+          text= "파랑";
+          break;
+          default:
+          text="선택해주세요."
+        }
+        document.getElementById("demo").innerHTML=text;
+      }
+
+      </script>
+
       <form action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
           <input type="file" name="profile">
           <input type="submit">
       </form>
       </br>
-      <h3>옷 선택</h3>
-      <div>
-        <span class="dropdown">
-          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">종류
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">상의</a></li>
-            <li><a href="#">하의</a></li>
-            <li><a href="#">신발</a></li>
-            <li><a href="#">악세사리</a></li>
-          </ul>
-        </span>
-        <span class="dropdown">
-          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">색상
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">흰색</a></li>
-              <li><a href="#">검정</a></li>
-              <li><a href="#">청색</a></li>
-            </ul>
-        </span>
-        <button class="btn btn-primary btn-lg" type="button">선택</button>
-      </div>
-
-       <p>선택결과</p>
-       <p></p>
       <h3>옷장</h3>
-      <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Closet 1</a>
-            </h4>
-          </div>
-          <div id="collapse1" class="panel-collapse collapse in">
-            <!-- Photo Grid -->
-            <div class="row">
-              <div class="column1">
-                <img src="photo/0-5.jpg" style="width:100%">
-                <img src="photo/0-2.jpg" style="width:100%">
-                <img src="photo/0-4.jpg" style="width:100%">
-                <img src="photo/0-1.jpg" style="width:100%">
-                <img src="photo/0-3.jpg" style="width:100%">
-              </div>
-              <div class="column1">
-                <img src="photo/0-17.jpg" style="width:100%">
-                <img src="photo/0-11.jpg" style="width:100%">
-                <img src="photo/0-8.jpg" style="width:100%">
-                <img src="photo/0-7.jpg" style="width:100%">
-                <img src="photo/0-10.jpg" style="width:100%">
-              </div>
-              <div class="column1">
-                <img src="photo/0-16.jpg" style="width:100%">
-                <img src="photo/0-14.jpg" style="width:100%">
-                <img src="photo/0-13.jpg" style="width:100%">
-                <img src="photo/0-12.jpg" style="width:100%">
-                <img src="photo/0-15.jpg" style="width:100%">
-              </div>
-            </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Closet 2</a>
-                </h4>
-              </div>
-              <div id="collapse2" class="panel-collapse collapse">
-                <!-- Photo Grid -->
-                <div class="row">
-                  <div class="column1">
-                    <img src="photo/0-1.jpg" style="width:100%">
-                    <img src="photo/0-2.jpg" style="width:100%">
-                    <img src="photo/0-3.jpg" style="width:100%">
-                    <img src="photo/0-4.jpg" style="width:100%">
-                    <img src="photo/0-5.jpg" style="width:100%">
-                  </div>
-                  <div class="column1">
-                    <img src="photo/0-6.jpg" style="width:100%">
-                    <img src="photo/0-7.jpg" style="width:100%">
-                    <img src="photo/0-10.jpg" style="width:100%">
-                    <img src="photo/0-11.jpg" style="width:100%">
-                    <img src="photo/0-17.jpg" style="width:100%">
-                  </div>
-                  <div class="column1">
-                    <img src="photo/0-12.jpg" style="width:100%">
-                    <img src="photo/0-13.jpg" style="width:100%">
-                    <img src="photo/0-15.jpg" style="width:100%">
-                    <img src="photo/0-16.jpg" style="width:100%">
-                  </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Closet 3</a>
-                </h4>
-              </div>
-              <div id="collapse3" class="panel-collapse collapse">
-                <!-- Photo Grid -->
-                <div class="row">
-                  <div class="column1">
-                    <img src="photo/0-5.jpg" style="width:100%">
-                    <img src="photo/0-17.jpg" style="width:100%">
-                    <img src="photo/0-2.jpg" style="width:100%">
-                  </div>
-                  <div class="column1">
-                    <img src="photo/0-6.jpg" style="width:100%">
-                    <img src="photo/0-9.jpg" style="width:100%">
-                    <img src="photo/0-8.jpg" style="width:100%">
-                  </div>
-                  <div class="column1">
-                    <img src="photo/0-12.jpg" style="width:100%">
-                    <img src="photo/0-16.jpg" style="width:100%">
-                  </div>
-                  <div class="column1">
-                    <img src="photo/0-4.jpg" style="width:100%">
-                    <img src="photo/0-13.jpg" style="width:100%">
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
 
     </div>
-
 
   </body>
 </html>
