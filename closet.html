@@ -120,16 +120,21 @@
         switch(pants) {
           case "흰색":
            text=document.createElement("logo5.png");
+           text.setAttribute("src", "logo5.png");         
           break;
           case "검정":
-          text=document.createElement("logo4.png"); ;
+            text=document.createElement("logo4.png"); 
+            text.setAttribute("src", "logo4.png");
+        
           break;
           case "파랑":
           text=document.createElement("logo2.png"); 
+          text.setAttribute("src", "logo2.png");
+        
           break;
           default:
           text="선택해주세요."
-        }        
+        }       
         text.setAttribute("width", "304");
         text.setAttribute("height", "228");
         text.setAttribute("alt", "The Pulpit Rock");
