@@ -116,7 +116,12 @@
       function myFunction() {
         var text;
         var pants = document.getElementById("myInput").value;
-
+        text=document.createElement("logo5.png");
+        text.setAttribute("src", "logo5.png");  
+        text.setAttribute("width", "304");
+        text.setAttribute("height", "228");
+        text.setAttribute("alt", "The Pulpit Rock");
+        document.body.appendChild(text);
         switch(pants) {
           case "흰색":
            text=document.createElement("logo5.png");
