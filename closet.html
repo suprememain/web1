@@ -47,8 +47,7 @@
         <div class="container d-flex justify-content-center">
           <div class="col-xs-8">
             <a href="main.html">
-              <dd="logo5.png">
-              <img alt="메인화면" src=dd width="80%">
+              <img alt="메인화면" src="logo5.png" width="80%">
             </a>
           </div>
           <div class="col-xs-4">
@@ -120,18 +119,22 @@
 
         switch(pants) {
           case "흰색":
-           text="흰색";
+           text=document.createElement("logo5.png");
           break;
           case "검정":
-          text= "검정";
+          text=document.createElement("logo4.png"); ;
           break;
           case "파랑":
-          text= "파랑";
+          text=document.createElement("logo2.png"); 
           break;
           default:
           text="선택해주세요."
-        }
-        document.getElementById("demo").innerHTML=text;
+        }        
+        x.setAttribute("width", "304");
+        x.setAttribute("height", "228");
+        x.setAttribute("alt", "The Pulpit Rock");
+        document.body.appendChild(x);
+        
       }
 
       </script>
