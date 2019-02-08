@@ -11,7 +11,6 @@
     <script type="text/javascript">
       $grid-columns:      12;
       $grid-gutter-width: 30px;
-
       $grid-breakpoints: (
       // Extra small screen / phone
       xs: 0,
@@ -24,18 +23,14 @@
       // Extra large screen / wide desktop
       xl: 1200px
       );
-
       $container-max-widths: (
       sm: 540px,
       md: 720px,
       lg: 960px,
       xl: 1140px
       );
-
       $grid-columns: 12 !default;
       $grid-gutter-width: 30px !default;
-
-
     </script>
 
     <link rel="stylesheet" href="style.css">
@@ -65,7 +60,6 @@
           <button class="btn btn-primary dropdown-toggle float-right btn-lg" type="button" data-toggle="dropdown">메뉴 이동
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <!--<li><a href="photo.html">TAKE PHOTO</a></li>-->
               <li><a href="blogger.html">BLOGGER CODI</a></li>
               <li><a href="collection.html">MY COLLECTION</a></li>
             </ul>
@@ -77,43 +71,47 @@
     </div>
 
     <div class="container">
-      <h2>내 옷장 - My Closet</h2>
-      <p><strong>Note:</strong> 내 옷장에 있는 옷들을 조회하기 </p>
+    <h2>내 옷장 - My Closet</h2>
+    <h4><strong>Note:</strong> 내 옷장에 있는 옷들을 조회하기 </h4>
+  </br>
 
-      <h3>옷 선택</h3>
-      <div>
-        <span class="dropdown">
-          <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">종류
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">상의</a></li>
-              <li><a href="#">하의</a></li>
-              <li><a href="#">신발</a></li>
-              <li><a href="#">악세사리</a></li>
-            </ul>
-          </span>
-          <span class="dropdown">
-            <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">색상
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">흰색</a></li>
-                <li><a href="#">검정</a></li>
-                <li><a href="#">파랑</a></li>
-              </ul>
+          <a>옷 선택</a>
+          <div>
+            <span class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">종류
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">상의</a></li>
+                  <li><a href="#">하의</a></li>
+                  <li><a href="#">신발</a></li>
+                  <li><a href="#">악세사리</a></li>
+                </ul>
             </span>
+            <span class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">색상
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">흰색</a></li>
+                  <li><a href="#">검정</a></li>
+                  <li><a href="#">파랑</a></li>
+                </ul>
+              </span>
             <button class="btn btn-primary btn-lg" type="button">선택</button>
           </div>
+      </div>
 
-          <a>선택결과</a>
-          <input></input>
-          <p></p>
+    <p></p>
+
     <h3>A demonstration of how to access a Checkbox</h3>
+  </br>
 
-    Checkbox: <input type="checkbox" id="myCheck">
+    <h3>Checkbox: <input type="checkbox" id="myCheck"></h3>
 
-    <p>Click the "Try it" button to check the checkbox.</p>
+    <h3>Click the "Try it" button to check the checkbox.</h3>
 
     <button onclick="myFunction3()">Try it</button>
+    </br>
+    </br>
 
     <script>
     function myFunction3() {
@@ -121,7 +119,7 @@
       x.checked = true;
     }
     </script>
-    
+
     <button onclick="myFunction2()">Try it</button>
 
     <script>
@@ -129,7 +127,7 @@
       var x = document.createElement("IMG");
       x.setAttribute("src", "https://suprememain.github.io/web1/logo5.png");
       x.setAttribute("width", "304");
-      x.setAttribute("height", "228");
+      x.setAttribute("height", "auto");
       x.setAttribute("alt", "The Pulpit Rock");
       document.body.appendChild(x);
       var y = document.getElementById("IMG").src;
@@ -137,55 +135,48 @@
     }
     </script>
 
-      <input type="text" id="myInput" value="흰색검정파랑">
-      <button type="button" name="button" onclick="myFunction()">눌러주세요</button>
-      <p id="demo"></p>
+      <input type="text" id="myInput" value="흰색/검정/파랑">
 
       <script>
       function myFunction() {
         var text;
         var pants = document.getElementById("myInput").value;
         text=document.createElement("logo5.png");
-        text.setAttribute("src", "logo5.png");  
+        text.setAttribute("src", "logo5.png");
         text.setAttribute("width", "304");
-        text.setAttribute("height", "228");
+        text.setAttribute("height", "auto");
         text.setAttribute("alt", "The Pulpit Rock");
         document.body.appendChild(text);
         switch(pants) {
           case "흰색":
            text=document.createElement("logo5.png");
-           text.setAttribute("src", "logo5.png");         
+           text.setAttribute("src", "logo5.png");
           break;
           case "검정":
-            text=document.createElement("logo4.png"); 
+            text=document.createElement("logo4.png");
             text.setAttribute("src", "logo4.png");
-        
+
           break;
           case "파랑":
-          text=document.createElement("logo2.png"); 
+          text=document.createElement("logo2.png");
           text.setAttribute("src", "logo2.png");
-        
+
           break;
           default:
           text="선택해주세요."
-        }       
+        }
         text.setAttribute("width", "304");
         text.setAttribute("height", "228");
         text.setAttribute("alt", "The Pulpit Rock");
         document.body.appendChild(text);
-        
-      }
 
+      }
       </script>
 
-      <form action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
-          <input type="file" name="profile">
-          <input type="submit">
-      </form>
       </br>
-      <h3>옷장</h3>
 
-    </div>
-
+    <h4>선택결과</h4>
+</br>
   </body>
+
 </html>
